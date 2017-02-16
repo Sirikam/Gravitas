@@ -152,3 +152,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+#database
+db.sqlite3
+
+
