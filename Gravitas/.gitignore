@@ -1,0 +1,10 @@
+## User-specific stuff:
+.idea/workspace.xml
+.idea/vsc.xml
+
+# Database
+db.sqlite3
+
+# virtuelenv
+Gravenv
+venv
