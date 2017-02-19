@@ -21,6 +21,9 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^staticpages/', include('apps.staticpages.urls')),
+    url(r'^quiz/', include('apps.quiz.urls')),
+    url(r'^progressbar/', include('apps.progressbar.urls')),
+    url(r'^upload/', include('apps.upload.urls')),
     #url(r'^$/',),
 
 
