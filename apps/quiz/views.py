@@ -15,6 +15,6 @@ def use(request):
     template = loader.get_template("../templates/quiz/student.html")
     return HttpResponse(template.render())
 
-#def admin(request):
+def admin(request):
     template = loader.get_template("../templates/quiz/admin.html")
     return HttpResponse(template.render())
