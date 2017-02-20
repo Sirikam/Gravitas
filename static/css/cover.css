@@ -29,6 +29,7 @@ html,
 body {
   height: 100%;
   background-image: url('../img/cover4.png');
+  no-repeat;
 }
 body {
   color: #fff;
