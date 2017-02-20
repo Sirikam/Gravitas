@@ -5,7 +5,8 @@ from django.http import HttpResponse
 from django.template import Context, loader
 
 def index(request):
-    return HttpResponse("<h1>A page for the quiz app</h1>")
+    template = loader.get_template("../templates/quiz/main.html")
+    return HttpResponse(template.render())
 
 def create(request):
     template = loader.get_template("../templates/quiz/proffesor.html")
