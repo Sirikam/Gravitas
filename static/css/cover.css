@@ -2,6 +2,7 @@
  * Globals
  */
 
+
 /* Links */
 a,
 a:focus,
@@ -27,8 +28,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-image: url("../img/cover3.png");
-    background-size:cover;
+  background-image: url('../img/cover4.png');
 }
 body {
   color: #fff;
