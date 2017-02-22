@@ -15,7 +15,7 @@ class Question(models.Model):
         return self.spoersmaal_stilt
 
 class Answer(models.Model):
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, default='')
     answer_alt = models.CharField(max_length=100)
     isRight = models.BooleanField(1)
 
