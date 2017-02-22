@@ -19,15 +19,17 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+from apps.staticpages.views import index
 
-from apps.staticpages.views import index, home
 
 urlpatterns = [
+    url(r'^$', index),
     url(r'^admin/', admin.site.urls),
     url(r'^staticpages/', include('apps.staticpages.urls')),
     url(r'^quiz/', include('apps.quiz.urls')),
     url(r'^progressbar/', include('apps.progressbar.urls')),
     url(r'^upload/', include('apps.upload.urls')),
-    url(r'^$/', home.as_view()),
+    url(r'^users/',include('apps.users.urls')),
+
 
 ]
