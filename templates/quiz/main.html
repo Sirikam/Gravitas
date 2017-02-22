@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
     <title>Quiz</title>
 
     <!-- Bootstrap core CSS -->
@@ -10,35 +9,30 @@
 
     <!-- Custom styles for this template -->
    <!--<link href="../../static/css/quiz.css" rel="stylesheet"> -->
-
-
     <!--[endif]-->
-
 </head>
 
 <body>
-<div class="container">
-
-        <div id="quiz">
-
-            <h1>QUIZ</h1>
-
-            <p id="question"></p>
-
-            <div class="buttons">
-                <button id="button0" type="button" class="btn btn-primary"></button>
-                <button type="button" class="btn btn-primary"></button>
-                <button type="button" class="btn btn-primary"></button>
-                <button type="button" class="btn btn-primary"></button>
-            </div>
+		<div id='container'>
+			<div id='title'>
+				<h1>Quiz</h1>
+			</div>
+                <br/>
+                <div id='quiz'></div>
+                <div class='button' id='next'><a href='#'>Next</a></div>
+                <div class='button' id='prev'><a href='#'>Prev</a></div>
+                <div class='button' id='start'> <a href='#'>Start Over</a></div>
+                <!-- <button class='' id='next'>Next</a></button>
+                <button class='' id='prev'>Prev</a></button>
+                <button class='' id='start'> Start Over</a></button> -->
         </div>
-
+        <!-- javascript -->
+		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+	    <script src="../../static/js/quiz.js"></script>
+	</body>
 </div>
     <!-- bootstrap.js -->
-    <script src="../../static/js/bootstrap"></script>
-
+    <script src="../../static/js/bootstrap.js"></script>
 
 </body>
-
-
 </html>
