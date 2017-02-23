@@ -15,3 +15,6 @@ class home(TemplateView):
 def login(request):
     template = loader.get_template("../templates/staticpages/login.html")
     return HttpResponse(template.render())
+def homepage(request):
+    template = loader.get_template("../templates/staticpages/homepage.html")
+    return HttpResponse(template.render())
