@@ -9,7 +9,7 @@ def index(request):
     return HttpResponse(template.render())
 
 def create(request):
-    template = loader.get_template("../templates/quiz/proffesor.html")
+    template = loader.get_template("../templates/quiz/professor.html")
     return HttpResponse(template.render())
 
 def use(request):
