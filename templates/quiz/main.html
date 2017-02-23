@@ -1,38 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Quiz</title>
+{% extends 'staticpages/main.html' %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../static/css/bootstrap.css" rel="stylesheet">
+{% block title %}{% endblock %}
 
-    <!-- Custom styles for this template -->
-   <!--<link href="../../static/css/quiz.css" rel="stylesheet"> -->
-    <!--[endif]-->
-</head>
-
-<body>
-		<div id='container'>
-			<div id='title'>
-				<h1>Quiz</h1>
-			</div>
-                <br/>
-                <div id='quiz'></div>
-                <div class='button' id='next'><a href='#'>Next</a></div>
-                <div class='button' id='prev'><a href='#'>Prev</a></div>
-                <div class='button' id='start'> <a href='#'>Start Over</a></div>
-                <!-- <button class='' id='next'>Next</a></button>
-                <button class='' id='prev'>Prev</a></button>
-                <button class='' id='start'> Start Over</a></button> -->
+{% block content %}
+    <div id='container'>
+        <div id='title'>
+            <h1>Quiz</h1>
         </div>
-        <!-- javascript -->
-		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
-	    <script src="../../static/js/quiz.js"></script>
-	</body>
-</div>
-    <!-- bootstrap.js -->
-    <script src="../../static/js/bootstrap.js"></script>
+            <br/>
+            <div id='quiz'></div>
+            <div class='button' id='next'><a href='#'>Next</a></div>
+            <div class='button' id='prev'><a href='#'>Prev</a></div>
+            <div class='button' id='start'> <a href='#'>Start Over</a></div>
+            <!-- <button class='' id='next'>Next</a></button>
+            <button class='' id='prev'>Prev</a></button>
+            <button class='' id='start'> Start Over</a></button> -->
+    </div>
+    <!-- javascript -->
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+    <script src="../../static/js/quiz.js"></script>
+    <link href="../../static/css/quiz.css" rel="stylesheet">
 
-</body>
-</html>
+{% endblock %}
