@@ -1,7 +1,9 @@
 from django.db import models
+from apps.courses.models import Course
 
 # Create your models here.
 class Quiz(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, default='')
     quiz_navn = models.CharField(max_length=50)
 
     def __str__(self):
