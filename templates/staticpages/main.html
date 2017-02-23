@@ -41,6 +41,7 @@
                 <ul class="nav masthead-nav">
                   {% if user.is_authenticated %}
                     <li class="navbar-text">Welcome, {{ user.username }}!</li>
+                    <li><a hfref="...">Home</a></li>
                     <li><a href="...">Logout</a></li>
                    {% else %}
                     <li><a href="...">Register</a></li>
@@ -52,13 +53,12 @@
           <div>
               {% block title %}
               {% endblock %}
-
           </div>
           </div>
-
+          <div class="maincontainer">
           {% block content %}
           {% endblock %}
-
+          </div>
           <div class="mastfoot">
             <div class="inner">
               <p>Made by Team Gravitas</p>
