@@ -17,5 +17,8 @@ def use(request):
     return HttpResponse(template.render())
 
 def admin(request):
-    template = loader.get_template("../templates/quiz/admin.html")
-    return HttpResponse(template.render())
+    return render(request, "../templates/courses/admin.html",
+                  {'Quiz': Quiz.objects.all(),
+                   'Question': Question.objects.all(),
+                   'Answer': Answer.objects.all()}
+                  )

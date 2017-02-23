@@ -5,5 +5,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
    # url(r'^professor/$', create, name='create'),
   #  url(r'^student/$', use, name='use'),
-   # url(r'^admin/$', admin, name='admin'),
+    url(r'^admin/$', views.admin, name='admin'),
 ]
