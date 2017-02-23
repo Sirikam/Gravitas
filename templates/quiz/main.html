@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Quiz</title>
+{% extends 'staticpages/main.html' %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../static/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-   <!--<link href="../../static/css/quiz.css" rel="stylesheet"> -->
-    <!--[endif]-->
-</head>
-
-<body>
+{% block content %}
 		<div id='container'>
 			<div id='title'>
 				<h1>Quiz</h1>
@@ -29,10 +17,4 @@
         <!-- javascript -->
 		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
 	    <script src="../../static/js/quiz.js"></script>
-	</body>
-</div>
-    <!-- bootstrap.js -->
-    <script src="../../static/js/bootstrap.js"></script>
-
-</body>
-</html>
+{% endblock %}
