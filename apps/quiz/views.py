@@ -5,7 +5,7 @@ from .models import Quiz, Question, Answer
 
 
 def index(request):
-    template = loader.get_template("../templates/users/main.html")
+    template = loader.get_template("../templates/quiz/main.html")
     return HttpResponse(template.render())
 
 def create(request):
