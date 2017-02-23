@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader
+from .models import Course
 # Create your views here.
 
 def index(request):
-    template = loader.get_template("../templates/courses/admin.html")
-    return HttpResponse(template.render())
+
+    return render(request, "../templates/courses/admin.html",
+                  {'Course': Course.objects.all()}
+                  )
