@@ -25,20 +25,13 @@ from apps.staticpages.views import index
 urlpatterns = [
     url(r'^$', index),
     url(r'^admin/', admin.site.urls),
-<<<<<<< HEAD
-    url(r'^staticpages/', include('apps.staticpages.urls')),
-    url(r'^quiz/', include('apps.quiz.urls')),
-    url(r'^progressbar/', include('apps.progressbar.urls')),
-    url(r'^upload/', include('apps.upload.urls')),
-    url(r'^users/',include('apps.users.urls')),
-    url(r'^courses/', include('apps.courses.urls')),
-=======
     url(r'^staticpages/', include('apps.staticpages.urls', namespace='staticpages')),
     url(r'^quiz/', include('apps.quiz.urls', namespace='quiz')),
     url(r'^progressbar/', include('apps.progressbar.urls', namespace='progressbar')),
     url(r'^upload/', include('apps.upload.urls', namespace='upload')),
-    url(r'^users/', include('apps.users.urls', namespace='users')),
->>>>>>> homepage
+    url(r'^users/',include('apps.users.urls', namespace='users')),
+    url(r'^courses/', include('apps.courses.urls')),
+
 
 
 ]
