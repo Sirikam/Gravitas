@@ -36,7 +36,7 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <img href="{% static "img/litenlogo.png" %}" alt="Gravitas"/>
+              <img href="../../static/img/litenlogo.png" alt="Gravitas"/>
               <nav>
                 <ul class="nav masthead-nav">
                   {% if user.is_authenticated %}
@@ -50,7 +50,7 @@
                 </ul>
               </nav>
             </div>
-          <div>
+          <div class="maincontainer">
               {% block title %}
               {% endblock %}
           </div>
