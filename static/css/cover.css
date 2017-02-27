@@ -166,11 +166,8 @@ body {
     width: 700px;
   }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> homepage
 .maincontainer{
-  background:rgba(100,100,100,0.5);
+  background:rgba(100,100,100,0.1);
   border-radius: 25px;
 }

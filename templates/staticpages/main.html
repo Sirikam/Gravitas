@@ -45,12 +45,12 @@
                     <li><a href="...">Logout</a></li>
                    {% else %}
                     <li><a href="...">Register</a></li>
-                    <li><a href="{%  url 'login' %}">Log in</a></li>
+                    <li><a href="{% url 'staticpages:login' %}">Log in</a></li>
                    {% endif %}
                 </ul>
               </nav>
             </div>
-          <div class="maincontainer">
+          <div>
               {% block title %}
               {% endblock %}
           </div>
