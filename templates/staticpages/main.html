@@ -8,15 +8,14 @@
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
       <meta name="description" content="">
       <meta name="author" content="">
-      <link rel="icon" href="../../favicon.ico">
 
       <title>Gravitas</title>
 
       <!-- Bootstrap core CSS -->
-      <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+      <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
       <!-- Custom styles for this template -->
-      <link href="../../static/css/cover.css" rel="stylesheet">
+      <link href="{% static 'css/cover.css' %}" rel="stylesheet">
       <link href="../../static/js/random-cover.js" rel="script">
 
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -36,7 +35,7 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <img href="../../static/img/litenlogo.png" alt="Gravitas"/>
+              <img class="logo" src="../../static/img/GRAVITASLOGO.png"  width="350" height="100" alt="Gravitas"/>
               <nav>
                 <ul class="nav masthead-nav">
                   {% if user.is_authenticated %}
@@ -76,6 +75,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../static/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
   </body>
 </html>
