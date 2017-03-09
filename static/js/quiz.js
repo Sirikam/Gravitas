@@ -136,11 +136,13 @@
               if (questionCounter === 1) {
                   $('#prev').show();
                   $('.rating').hide();
+                  $('#takk').hide();
               } else if (questionCounter === 0) {
 
                   $('#prev').hide();
                   $('#next').show();
                   $('.rating').hide();
+                  $('#takk').hide();
               }
           } else {
               var scoreElem = displayScore();
@@ -149,6 +151,7 @@
               $('#prev').hide();
               $('#start').show();
               $('.rating').show();
+              $('#takk').hide();
 
           }
       });
@@ -165,7 +168,7 @@
           }
 
           score.append('You got ' + numCorrect + ' questions out of ' +
-              questions.length + ' right!!!');
+              questions.length + ' right!');
 
           return score;
       };
