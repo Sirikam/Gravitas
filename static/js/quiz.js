@@ -25,6 +25,7 @@
   var selections = []; //Array containing user choices
   var quiz = $('#quiz'); //Quiz div object
 
+
   // Display initial question
   displayNext();
 
@@ -121,47 +122,53 @@
 
   // Displays next requested element
   function displayNext() {
-    quiz.fadeOut(function() {
-      $('#question').remove();
+      quiz.fadeOut(function () {
+          $('#question').remove();
 
-      if(questionCounter < questions.length){
-        var nextQuestion = createQuestionElement(questionCounter);
-        quiz.append(nextQuestion).fadeIn();
-        if (!(isNaN(selections[questionCounter]))) {
-          $('input[value='+selections[questionCounter]+']').prop('checked', true);
-        }
+          if (questionCounter < questions.length) {
+              var nextQuestion = createQuestionElement(questionCounter);
+              quiz.append(nextQuestion).fadeIn();
+              if (!(isNaN(selections[questionCounter]))) {
+                  $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+              }
 
-        // Controls display of 'prev' button
-        if(questionCounter === 1){
-          $('#prev').show();
-        } else if(questionCounter === 0){
+              // Controls display of 'prev' button
+              if (questionCounter === 1) {
+                  $('#prev').show();
+                  $('.rating').hide();
+              } else if (questionCounter === 0) {
 
-          $('#prev').hide();
-          $('#next').show();
-        }
-      }else {
-        var scoreElem = displayScore();
-        quiz.append(scoreElem).fadeIn();
-        $('#next').hide();
-        $('#prev').hide();
-        $('#start').show();
-      }
-    });
-  }
+                  $('#prev').hide();
+                  $('#next').show();
+                  $('.rating').hide();
+              }
+          } else {
+              var scoreElem = displayScore();
+              quiz.append(scoreElem).fadeIn();
+              $('#next').hide();
+              $('#prev').hide();
+              $('#start').show();
+              $('.rating').show();
 
-  // Computes score and returns a paragraph element to be displayed
-  function displayScore() {
-    var score = $('<p>',{id: 'question'});
+          }
+      });
 
-    var numCorrect = 0;
-    for (var i = 0; i < selections.length; i++) {
-      if (selections[i] === questions[i].correctAnswer) {
-        numCorrect++;
-      }
-    }
+      // Computes score and returns a paragraph element to be displayed
+      function displayScore() {
+          var score = $('<p>', {id: 'question'});
 
-    score.append('You got ' + numCorrect + ' questions out of ' +
-                 questions.length + ' right!!!');
-    return score;
-  }
-})();
+          var numCorrect = 0;
+          for (var i = 0; i < selections.length; i++) {
+              if (selections[i] === questions[i].correctAnswer) {
+                  numCorrect++;
+              }
+          }
+
+          score.append('You got ' + numCorrect + ' questions out of ' +
+              questions.length + ' right!!!');
+
+          return score;
+      };
+
+
+  }})();
