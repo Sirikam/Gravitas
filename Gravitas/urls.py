@@ -14,12 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.conf.urls import include, url
-from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from apps.staticpages.views import index
+from django.conf.urls import include, url
+from django.views.generic import RedirectView #for den siste funskjonen
 
 
 urlpatterns = [
@@ -31,7 +31,8 @@ urlpatterns = [
     url(r'^upload/', include('apps.upload.urls', namespace='upload')),
     url(r'^users/',include('apps.users.urls', namespace='users')),
     url(r'^courses/', include('apps.courses.urls')),
+    url(r'^documents/', include('apps.documents.urls', namespace='documents')),
 
+    url(r'^$', RedirectView.as_view(url='/documents/list/', permanent=True)),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-
-]
