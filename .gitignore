@@ -157,7 +157,7 @@ db.sqlite3
 
 Gravenv/
 templates/progressbar/
-templates/upload/
+
 
 #Rules for mac
 .DS_Store
