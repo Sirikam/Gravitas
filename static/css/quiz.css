@@ -10,8 +10,8 @@ ul {
     width: 100%;
     background-color: forestgreen;
 }
-#myBar {
-    width: 1%;
+#theBar {
+    width: 10%;
     height: 30px;
     background-color: whitesmoke;
 }
