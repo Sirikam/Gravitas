@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'apps.courses.apps.CoursesConfig',
     'apps.quiz.apps.QuizConfig',
     'apps.users.apps.UsersConfig',
+    'apps.documents.apps.DocumentsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,3 +134,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
 )
+
+# media files, this will need to be changed in the full version
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
