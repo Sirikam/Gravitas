@@ -1,10 +1,39 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>tdt4145</title>
 </head>
 <body>
-$END$
+    <h1>TDT4145</h1>
+    <p>
+        Her er en oversikt over hvilke dokumenter du har og ikke har lest gjennom!
+    </p>
+    <!--Tabell-->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Dokument</th>
+                    <th>Lest status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Forelesning1</td>
+                    <td>ja</td>
+                </tr>
+                <tr>
+                    <td>Forelesning2</td>
+                    <td>ja</td>
+                </tr>
+                <tr>
+                    <td>Forelesning3</td>
+                    <td>nei</td>
+                </tr>
+            </tbody>
+        </table>
 </body>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
 </html>

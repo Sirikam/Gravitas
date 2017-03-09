@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^upload/', include('apps.upload.urls', namespace='upload')),
     url(r'^users/',include('apps.users.urls', namespace='users')),
     url(r'^courses/', include('apps.courses.urls')),
+    url(r'^documents/', include('apps.documents.urls', namespace='documents')),
 
 
 
