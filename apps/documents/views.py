@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader
-<<<<<<< HEAD
-=======
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
@@ -31,7 +29,6 @@ def list(request):
         'documents/list.html',
         {'documents': documents, 'form': form}
     )
->>>>>>> 6d78dea3fafa37899db67f031ab7e089efe59f1b
 
 
 def index(request):
