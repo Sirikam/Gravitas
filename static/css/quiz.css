@@ -6,7 +6,7 @@ ul {
     float:none;
     width:300px;
 }
-.rating span { float:none; position:center; }
+.rating span { float:left; position:center; }
 .rating span input {
     position:absolute;
     top:0px;
@@ -20,7 +20,7 @@ ul {
     text-align:center;
     color:white;
     background:#ccc;
-    font-size:35px;
+    font-size:40px;
     margin-right:2px;
     line-height:30px;
     border-radius:50%;
