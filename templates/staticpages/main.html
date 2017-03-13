@@ -34,12 +34,12 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <img class="logo" src="../../static/img/GRAVITASLOGO.png"  width="350" height="100" alt="Gravitas"/>
+              <img class="logo" src="{% static "img/GRAVITASLOGO.png" %}"  width="350" height="100" alt="Gravitas"/>
               <nav>
                 <ul class="nav masthead-nav">
                   {% if user.is_authenticated %}
                     <li class="navbar-text">Welcome, {{ user.username }}!</li>
-                    <li><a hfref="...">Home</a></li>
+                    <li><a hfref="{% url 'staticpages:hompeage' %}">Home</a></li>
                     <li><a href="...">Logout</a></li>
                    {% else %}
                     <li><a href="...">Register</a></li>
@@ -48,7 +48,7 @@
                 </ul>
               </nav>
             </div>
-          <div>
+          <div class="maintitle">
               {% block title %}
               {% endblock %}
           </div>
