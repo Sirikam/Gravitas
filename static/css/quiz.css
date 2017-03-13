@@ -3,10 +3,10 @@ ul {
   list-style-type: none;
 }
 .rating {
-    float:left;
+    float:none;
     width:300px;
 }
-.rating span { float:right; position:relative; }
+.rating span { float:none; position:center; }
 .rating span input {
     position:absolute;
     top:0px;
