@@ -2,10 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader
 from .models import Quiz, Question, Answer
-from apps.courses.models import Course
 from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
 from django.urls import resolve
 
+from apps.courses.models import Course
 
 
 class QuizView(TemplateResponseMixin, ContextMixin, View):

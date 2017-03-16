@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
+from django.urls import resolve
 
 from apps.documents.models import Document
 from apps.documents.forms import DocumentForm
@@ -31,21 +33,25 @@ def list(request):
     )
 
 
-def index(request):
-    template = loader.get_template("../templates/documents/main.html")
-    return HttpResponse(template.render())
+class DocumentView(TemplateResponseMixin, ContextMixin, View):
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        active_page = resolve(request.path_info).url_name
+        before_pages = []
+        after_pages = []
+        page_found = False
+
+        form = DocumentForm() #empty form, just to be able to open files, not post them
+        documents = Document.objects.all()
+
+        context['before_pages'] = before_pages
+        context['after_pages'] = after_pages
+        context.update({
+            'documents': documents, 'form': form}
+        )
+
+        return self.render_to_response(context)
 
 
-def tdt4180(request):
-    template = loader.get_template("documents/tdt4180.html")
-    return HttpResponse(template.render())
 
 
-def tdt4120(request):
-    template = loader.get_template("documents/tdt4120.html")
-    return HttpResponse(template.render())
-
-
-def tdt4145(request):
-    template = loader.get_template("documents/tdt4145.html")
-    return HttpResponse(template.render())
