@@ -1,12 +1,11 @@
 from django.conf.urls import url
-from . import views
+from .views import StaticView
 
 from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^login/$', views.login, name='login'),
-    url(r'^homepage/$', views.homepage, name='homepage')
+    url(r'^login/$', StaticView.as_view(template_name='staticpages/login.html'), name='login'),
+    url(r'^homepage/$', StaticView.as_view(template_name='staticpages/homepage.html'), name='homepage')
 ]

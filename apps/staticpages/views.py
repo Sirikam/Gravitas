@@ -4,22 +4,25 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader
 from django.views.generic import TemplateView
+from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
+from django.urls import resolve
+from apps.users.models import Person
 
 
-def index(request):
-    template = loader.get_template("../templates/staticpages/home.html")
-    return HttpResponse(template.render())
+
+class StaticView(TemplateResponseMixin, ContextMixin, View):
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        active_page = resolve(request.path_info).url_name
+        before_pages = []
+        after_pages = []
+        page_found = False
 
 
-class home(TemplateView):
-    template = loader.get_template("../templates/staticpages/home.html")
+        context['before_pages'] = before_pages
+        context['after_pages'] = after_pages
+        context.update({
+            'Person': Person.objects.all()}
+        )
 
-
-def login(request):
-    template = loader.get_template("../templates/staticpages/login.html")
-    return HttpResponse(template.render())
-
-
-def homepage(request):
-    template = loader.get_template("../templates/staticpages/homepage.html")
-    return HttpResponse(template.render())
+        return self.render_to_response(context)

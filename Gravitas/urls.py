@@ -17,13 +17,13 @@ from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
-from apps.staticpages.views import index
+from apps.staticpages.views import StaticView
 from django.conf.urls import include, url
 from django.views.generic import RedirectView #for den siste funskjonen
 
 
 urlpatterns = [
-    url(r'^$', index),
+    url(r'^$', StaticView.as_view(template_name='staticpages/home.html'), name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^staticpages/', include('apps.staticpages.urls', namespace='staticpages')),
     url(r'^quiz/', include('apps.quiz.urls', namespace='quiz')),
