@@ -3,24 +3,27 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from .models import Quiz, Question, Answer
 from apps.courses.models import Course
+from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
+from django.urls import resolve
 
 
-def index(request):
-    template = loader.get_template("../templates/quiz/main.html")
-    return HttpResponse(template.render())
 
-def create(request):
-    template = loader.get_template("../templates/quiz/professor.html")
-    return HttpResponse(template.render())
+class QuizView(TemplateResponseMixin, ContextMixin, View):
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        active_page = resolve(request.path_info).url_name
+        before_pages = []
+        after_pages = []
+        page_found = False
 
-def use(request):
-    template = loader.get_template("../templates/quiz/student.html")
-    return HttpResponse(template.render())
 
-def admin(request):
-    return render(request, "../templates/quiz/admin.html",
-                  {'Quiz': Quiz.objects.all(),
-                   'Question': Question.objects.all(),
-                   'Answer': Answer.objects.all(),
-                   'Course': Course.objects.all()}
-                  )
+        context['before_pages'] = before_pages
+        context['after_pages'] = after_pages
+        context.update({
+            'Quiz': Quiz.objects.all(),
+            'Question': Question.objects.all(),
+            'Answer': Answer.objects.all(),
+            'Course': Course.objects.all()}
+        )
+
+        return self.render_to_response(context)
