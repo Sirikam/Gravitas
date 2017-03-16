@@ -11,9 +11,9 @@
 <h1>Documents</h1>
 
 <!-- linker til de forskjellige emnesidene med dokumentene -->
-<a href="{% url 'documents:tdt4180' %}">TDT4180</a>
-<a href="{% url 'documents:tdt4120' %}">TDT4120</a>
-<a href="{% url 'documents:tdt4145' %}">TDT4145</a>
+{% for course in Course %}
+    <a href="#">{{ course.course_code }}</a>
+{% endfor %}
 
 
 </body>

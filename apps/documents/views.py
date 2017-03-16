@@ -8,6 +8,7 @@ from django.urls import resolve
 
 from apps.documents.models import Document
 from apps.documents.forms import DocumentForm
+from apps.courses.models import Course
 
 def list(request):
     # Handle file upload
@@ -27,9 +28,10 @@ def list(request):
 
     # Render list page with the documents and the form
     return render(
-        request,
-        'documents/list.html',
-        {'documents': documents, 'form': form}
+        request, 'documents/list.html',{
+        'documents': documents,
+        'form': form,
+        'Course': Course.objects.all()}
     )
 
 
@@ -47,7 +49,9 @@ class DocumentView(TemplateResponseMixin, ContextMixin, View):
         context['before_pages'] = before_pages
         context['after_pages'] = after_pages
         context.update({
-            'documents': documents, 'form': form}
+            'documents': documents,
+            'form': form,
+            'Course': Course.objects.all()}
         )
 
         return self.render_to_response(context)
