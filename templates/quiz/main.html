@@ -14,18 +14,25 @@
             <!-- <button class='' id='next'>Next</a></button>
             <button class='' id='prev'>Prev</a></button>
             <button class='' id='start'> Start Over</a></button> -->
-            <div class="rating">
-                <p>Please rate this quiz.</p>
-                <span><input type="radio" name="rating" id="str5" value="5"><label for="str5">5</label></span>
-                <span><input type="radio" name="rating" id="str4" value="4"><label for="str4">4</label></span>
-                <span><input type="radio" name="rating" id="str3" value="3"><label for="str3">3</label></span>
-                <span><input type="radio" name="rating" id="str2" value="2"><label for="str2">2</label></span>
-                <span><input type="radio" name="rating" id="str1" value="1"><label for="str1">1</label></span>
+            <div class="stars">
+              <form action="">
+                <input class="star star-5" id="star-5" type="radio" name="star"/>
+                <label class="star star-5" for="star-5"></label>
+                <input class="star star-4" id="star-4" type="radio" name="star"/>
+                <label class="star star-4" for="star-4"></label>
+                <input class="star star-3" id="star-3" type="radio" name="star"/>
+                <label class="star star-3" for="star-3"></label>
+                <input class="star star-2" id="star-2" type="radio" name="star"/>
+                <label class="star star-2" for="star-2"></label>
+                <input class="star star-1" id="star-1" type="radio" name="star"/>
+                <label class="star star-1" for="star-1"></label>
+              </form>
             </div>
             <p id="takk"></p>
 
     </div>
     <!-- javascript & CSS-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
     <script src="{% static 'js/quiz.js' %}"></script>
     <script src="{% static 'js/rating.js' %}"></script>
