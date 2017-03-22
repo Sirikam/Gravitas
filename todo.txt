@@ -1,50 +1,22 @@
 //TODO
 
-1. fikse brukere, da med passord og tilhørende fag
+1. fikse brukere, da med passord og tilhï¿½rende fag
 
-3. sørge for at man dynamisk kan opprette nye fagsider med urls
+3. sï¿½rge for at man dynamisk kan opprette nye fagsider med urls
 
-4. sørge for at hver fagside har en dokumentside som tilhører den
+4. sï¿½rge for at hver fagside har en dokumentside som tilhï¿½rer den
 
 5. finne ut hvordan man kan linke inn disse sidene dynamisk.
 
-6. ting som fagsiden må inneholde:
+6. ting som fagsiden mï¿½ inneholde:
 	- en liste over dokumenter med hyperlink
 	- en liste over quizzer med hyperlink
 	- Fagleder og kordinatorerer
 	- medlemmer(studenter)
 
-7. modeller som må fikses:
-
-	Courses
-		- fagkode int(4)
-		- fagnavn varChar(50)
-		- fagAnsvarlig textField (foreignkey i fremtiden)
-		- kordinatorer list (fk i fremtiden)
-		
-	users
-		- navn_for
-		- navn_mellom
-		- navn_etter
-		- email varChar
-		- proffesor bool
-		- fag list (fk list)
-
-	Documents
-		- course fk int(fk)
-		- docfile
-		- navn
-		- public bool (for om man vil dele dette med andre enn innleveringer)	
-
-	Quiz
-		- course = models.ForeignKey(Course, on_delete=models.CASCADE, default='')
-    		- quiz_navn = models.CharField(max_length=50)	
-		- max_questions int(4)
-		- bestått % varchar(5)
-
 8. quiz sidene
-	- Dynamisk linking til hver quiz, basert på course + quiz navn.
-	- finne ut hvordan man kan bruke databasen i javascriptet, basert på løsningen over.
+	- Dynamisk linking til hver quiz, basert pï¿½ course + quiz navn.
+	- finne ut hvordan man kan bruke databasen i javascriptet, basert pï¿½ lï¿½sningen over.
 	- lagre resultatet av quizzen hos brukeren, slik at man kan tracke progress.
 		
 		

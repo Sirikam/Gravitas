@@ -5,6 +5,8 @@ from apps.courses.models import Course
 class Quiz(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE, default='')
     quiz_navn = models.CharField(max_length=50)
+    maxQuestions = models.IntegerField(4, default=0)
+    passedPercentage = models.CharField(max_length=50, default=0)
 
     def __str__(self):
         return self.quiz_navn
