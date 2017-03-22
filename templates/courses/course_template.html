@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "staticpages/navbar.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ course_code }}</title>
+</head>
+<body>
+
+<div>
+    <h1>{{ current_course }}</h1>
+    <p>Velkommen til siden til {{ current_course }}. Her kan du se en liste over alle medlemmer, samt tilhørende dokumenter og quizzer</p>
+</div>
+
+
+
+</body>
+</html>
+{% endblock %}

@@ -6,8 +6,10 @@
 </head>
 <body>
     <h1>ADMIN</h1>
+    <ul>
     {% for item in Course %}
-        <p>{{ item.course_code }}</p>
+        <li><a href="/courses/{{ item.id }}/">{{ item.course_code }}</a></li>
     {% endfor %}
+    </ul>
 </body>
 </html>
