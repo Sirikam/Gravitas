@@ -1,15 +1,21 @@
 <!DOCTYPE html>
+{% extends "staticpages/navbar.html" %}
+{% block content %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>admin</title>
 </head>
 <body>
-    <h1>ADMIN</h1>
-    <ul>
-    {% for item in Course %}
-        <li><a href="/courses/{{ item.id }}/">{{ item.course_code }}</a></li>
-    {% endfor %}
-    </ul>
+    <div>
+        <h1>ADMIN</h1>
+        <ul>
+        {% for item in Course %}
+            <p><a href="/courses/{{ item.id }}/">{{ item.course_code }}</a></p>
+        {% endfor %}
+        </ul>
+    </div>/
+
 </body>
 </html>
+{% endblock %}

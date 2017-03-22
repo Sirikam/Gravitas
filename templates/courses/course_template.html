@@ -11,8 +11,14 @@
 <div>
     <h1>{{ current_course }}</h1>
     <p>Velkommen til siden til {{ current_course }}. Her kan du se en liste over alle medlemmer, samt tilhørende dokumenter og quizzer</p>
-</div>
 
+</div>
+<div>
+    <h2> her er en liste over deltagere</h2>
+    {% for item in participants %}
+        <p> {{ item.first_name }}{{ item.last_name }}</p>
+    {% endfor %}
+</div>
 
 
 </body>
