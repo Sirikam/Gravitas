@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from . import views
+from .views import CourseView
 
 urlpatterns = [
-    url(r'^$', views.index, name='admin'),
+    url(r'^$', CourseView.as_view(template_name='courses/admin.html'), name='admin'),
 ]

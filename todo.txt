@@ -1,6 +1,5 @@
 //TODO
 
-1. fikse brukere, da med passord og tilh�rende fag
 
 3. s�rge for at man dynamisk kan opprette nye fagsider med urls
 
