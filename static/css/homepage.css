@@ -4,7 +4,7 @@
 
 body {
   padding-bottom: 40px;
-  background-color: lightskyblue;
+  background-color: lightgrey;
 }
 
 
@@ -83,7 +83,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -302,7 +302,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 700px;
+    width: 80%;
   }
 }
 
@@ -313,4 +313,7 @@ body {
   margin-top: 120px;
   margin-left: 50px;
   margin-right: 50px;
+}
+.quote{
+  font-size: 40px;
 }
