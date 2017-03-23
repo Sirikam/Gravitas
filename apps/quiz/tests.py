@@ -4,14 +4,16 @@ from apps.quiz.models import Question
 from apps.quiz.models import Answer
 
 
-#class QuizTest(TestCase):
-    #def setUp(self):
+class QuizTest(TestCase):
 
-         #def test_quiz(self):
-       # Quiz.objects.create(name="jususquiztus")
-       # jesus = Quiz.objects.get(name="jesusquiztus")
-       # self.assertEqual(jesus.speak(), 'nytt quiznavn "jesus"')
+    def test_quiz(self):
+        quiz_instance = Quiz(quiz_navn="quiznavn")
+        self.assertEqual(quiz_instance.__str__(), 'quiznavn')
 
-    #def test_question(self):
+    def test_question(self):
+        question_instance = Question(spoersmaal_stilt="spørsmal")
+        self.assertEqual(question_instance.__str__(), 'spørsmal')
 
-    #ef test_answer(self):
+    def test_answer(self):
+        answer_instance = Answer(answer_alt="svar")
+        self.assertEqual(answer_instance.__str__(), 'svar')
