@@ -1,4 +1,5 @@
 {% extends 'staticpages/navbar.html' %}
+{% load staticfiles %}
 {% block content %}
     <!-- Carousel
     ================================================== -->
@@ -16,7 +17,6 @@
             <div class="carousel-caption">
               <h1>Welcome!</h1>
               <p>You are now on the Gravitas homepage. Explore the app further through the navbar above.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@
           <img class="img-circle" src="../../static/img/Logo_plan.png" alt="plan" width="140" height="140">
           <h2>Schedule</h2>
           <p>Here you can view your schedule. Powered by 1024.no</p>
-          <p><a class="btn btn-default" href="#" role="button">View schedule &raquo;</a></p>
+          <p><a class="btn btn-default" href="{% url 'staticpages:schedule' %}" role="button">View schedule &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -109,17 +109,6 @@
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
     </div>
       <!-- /END THE FEATURETTES -->
 {% endblock %}
