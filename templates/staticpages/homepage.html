@@ -1,4 +1,5 @@
 {% extends 'staticpages/navbar.html' %}
+{% load staticfiles %}
 {% block content %}
     <!-- Carousel
     ================================================== -->
@@ -16,7 +17,6 @@
             <div class="carousel-caption">
               <h1>Welcome!</h1>
               <p>You are now on the Gravitas homepage. Explore the app further through the navbar above.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
             </div>
           </div>
         </div>
@@ -61,22 +61,22 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="../../static/img/quiz.png" alt="Quiz" width="140" height="140">
+          <img class="img-circle" src="{% static 'img/quiz.png' %}" alt="Quiz" width="140" height="140">
           <h2>Quiz</h2>
           <p>Gravitas have several quizes on lecture material from different subjects.</p>
           <p><a class="btn btn-default" href="{% url 'quiz:index' %}" role="button">Go to quizes &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="{% static 'img/DocumentsFolder.png' %}" alt="Generic placeholder image" width="140" height="140">
           <h2>Documents</h2>
           <p>You can view documents uploaded by the lecturers here.</p>
           <p><a class="btn btn-default" href="#" role="button">View documents &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="{% static 'img/schedule.png' %}" style="background-color: white" alt="Generic placeholder image" width="140" height="140">
           <h2>Schedule</h2>
           <p>Here you can view your schedule. Powered by 1024.no</p>
-          <p><a class="btn btn-default" href="#" role="button">View schedule &raquo;</a></p>
+          <p><a class="btn btn-default" href="{% url 'staticpages:schedule' %}" role="button">View schedule &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -109,17 +109,6 @@
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
     </div>
       <!-- /END THE FEATURETTES -->
 {% endblock %}
