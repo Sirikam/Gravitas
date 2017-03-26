@@ -35,9 +35,9 @@ def view(request, course_id):
     current_course= Course.objects.filter(pk=course_id).get()
     participants = []
     users = Person.objects.all()
-    for user in users:
-        if user.course == current_course.course_code:
-            participants.append(user)
+    #for user in users:
+     #   if user.objects.filter(user__course__course_code__icontains=current_course.course_code):
+      #      participants.append(user)
 
     return render(request, 'courses/course_template.html',
                   {'current_course':current_course,
