@@ -84,12 +84,14 @@ def load_next_question(request, sitting, quiz):
 
     next_question = Question.objects.get(id=question_ID)
 
+
+
     return render_to_response('quiz/question.html',
                               {'quiz': quiz,
                                'question': next_question,
                                'previous': previous,
                                },
-                              context_instance=RequestContext(request)
+                              #context_instance=RequestContext(request)
                               )
 
 
@@ -142,7 +144,8 @@ def final_result(request, sitting, previous):
             'max_score': max_score,
             'percent': percent,
             'previous': previous},
-            context_instance=RequestContext(request))
+          #  context_instance=RequestContext(request)
+                                  )
     else:  # show all questions and answers
         questions = quiz.question_set.all()
         return render_to_response('quiz/result.html', {
@@ -152,4 +155,5 @@ def final_result(request, sitting, previous):
             'percent': percent,
             'questions': questions,
             'incorrect_questions': incorrect},
-            context_instance=RequestContext(request))
+          # context_instance=RequestContext(request)
+         )

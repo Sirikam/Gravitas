@@ -1,6 +1,5 @@
-{% extends "staticpages/navbar.html" %}
-{% load i18n %}
 
+{% load i18n %}
 
 {% block page_title %}
     Quizzes related to {{ category.name }}
@@ -16,7 +15,7 @@
         <ul>
         {% for quiz in quizzes %}
             <li>
-                <a href="{% url "quiz_take" quiz.id %}">
+                <a href="{% url "quiz:quiz_take" quiz.id %}">
                     {{ quiz.title }}
                 </a>
             </li>
