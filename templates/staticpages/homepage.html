@@ -68,19 +68,24 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="../../static/img/Logo_quiz.png" alt="Quiz" width="140" height="140">
+
+          <img class="img-circle" src="{% static 'img/Logo_quiz.png'%}" alt="Quiz" width="140" height="140">
+
           <h2>Quiz</h2>
           <p>Gravitas have several quizzes on lecture material from different subjects.</p>
           <p><a class="btn btn-default" href="{% url 'quiz:index' %}" role="button">Go to quizzes &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="../../static/img/Logo_doc.png" alt="doc" width="140" height="140">
+
+          <img class="img-circle" src="{% static 'img/Logo_doc.png'%}" alt="Generic placeholder image" width="140" height="140">
           <h2>Documents</h2>
           <p>You can view documents uploaded by the lecturers here.</p>
           <p><a class="btn btn-default" href="#" role="button">View documents &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="../../static/img/Logo_plan.png" alt="plan" width="140" height="140">
+
+          <img class="img-circle" src="{% static 'img/Logo_plan.png'%}" alt="Generic placeholder image" style="background-color: white" width="140" height="140">
+
           <h2>Schedule</h2>
           <p>Here you can view your schedule. Powered by 1024.no</p>
           <p><a class="btn btn-default" href="{% url 'staticpages:schedule' %}" role="button">View schedule &raquo;</a></p>

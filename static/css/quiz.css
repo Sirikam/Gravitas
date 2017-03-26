@@ -2,30 +2,30 @@
 ul {
   list-style-type: none;
 }
-div.stars {
-  width: 270px;
-  display: inline-block;
+
+.rating {
+    float:none;
+    width:300px;
 }
-
-input.star { display: none; }
-
-label.star {
-  float: right;
-  padding: 10px;
-  font-size: 36px;
-  color: #444;
-  transition: all .2s;
+.rating span { float:left; position:center; }
+.rating span input {
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0;
 }
-
-input.star:checked ~ label.star:before {
-  content: '\f005';
-  color: #FD4;
-  transition: all .25s;
-}
-
-input.star-5:checked ~ label.star:before {
-  color: #FE7;
-  text-shadow: 0 0 20px #952;
+.rating span label {
+    display:inline-block;
+    width:30px;
+    height:30px;
+    text-align:center;
+    color:white;
+    background:#ccc;
+    font-size:40px;
+    margin-right:2px;
+    line-height:30px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
 }
 
 input.star-1:checked ~ label.star:before { color: #F62; }
