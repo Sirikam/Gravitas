@@ -1,0 +1,29 @@
+{% extends "staticpages/navbar.html" %}
+{% load i18n %}
+
+
+{% block page_title %}
+    Quizzes related to {{ category.name }}
+{% endblock %}
+
+{% block header %}
+    <h3>Quizzes in {{ category.name }}</h3>
+{% endblock %}
+
+{% block article %}
+
+    {% if quizzes %}
+        <ul>
+        {% for quiz in quizzes %}
+            <li>
+                <a href="{% url "quiz_take" quiz.id %}">
+                    {{ quiz.title }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no quizzes.</p>
+    {% endif %}
+
+{% endblock %}
