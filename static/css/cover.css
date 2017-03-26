@@ -172,13 +172,11 @@ body {
 }
 
 .maincontainercover{
-  background:rgba(100,100,100,0.1);
   border-radius: 25px;
   text-align: center;
-  margin-top: 120px;
-  margin-left: 50px;
-  margin-right: 50px;
+
 }
+
 
 h1, h2{
   color: white;

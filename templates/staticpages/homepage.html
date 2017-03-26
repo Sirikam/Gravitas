@@ -12,7 +12,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="../../static/img/cover4.png" alt="First slide">
+          <img class="first-slide" src="{% static 'img/acover.jpg' %}" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Welcome!</h1>
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <img class="second-slide" src="{% static 'img/cover.png' %}" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>quizzes</h1>
@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <img class="third-slide" src="{% static 'img/cover3.png' %}" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>One more for good measure.</h1>
@@ -56,6 +56,13 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
+    <div class="quote">
+        <hr class="featurette-divider">
+        <p id="quote"></p>
+    <hr class="featurette-divider">
+    </div>
+<br>
+<br>
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
@@ -111,4 +118,5 @@
 
     </div>
       <!-- /END THE FEATURETTES -->
+    <script src="{% static "js/random-quote.js" %}"></script>
 {% endblock %}
