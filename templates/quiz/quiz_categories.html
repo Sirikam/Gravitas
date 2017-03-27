@@ -1,8 +1,9 @@
-
+{% extends 'staticpages/navbar.html' %}
+{% load staticfiles %}
+{% block content %}
 
 {% block page_title %}
-    Quiz categories
-
+    <h2>Quiz categories</h2>
 {% endblock %}
 
 {% block header %}
@@ -25,4 +26,5 @@
         <p>There are no categories.</p>
     {% endif %}
 
+{% endblock %}
 {% endblock %}

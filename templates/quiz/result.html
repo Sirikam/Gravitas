@@ -1,9 +1,12 @@
+{% extends 'staticpages/navbar.html' %}
+{% load staticfiles %}
+{% block content %}
 
 {% load quiz_tags %}
 {% load i18n %}
 
 {% block page_title %}
-    Exam Paper Result
+    <h2>Exam Paper Result</h2>
 {% endblock %}
 
 {% block header %}
@@ -13,7 +16,7 @@
 
 {% block article %}
 
-Exam Results
+    <h4>Exam Results</h4>
 
 {% if previous %}
     <p class="muted"><small>The previous question:</small></p>
@@ -57,8 +60,9 @@ Exam Results
         {% correct_answer_for_all_with_users_incorrect question incorrect_questions %}
     {% endfor %}
 {% else %}
-    You have already seen answers after each question so we are not displaying
-    them again here.
+    <p>You have already seen answers after each question so we are not displaying
+        them again here.</p>
 {% endif %}
 
+{% endblock %}
 {% endblock %}

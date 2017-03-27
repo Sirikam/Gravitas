@@ -65,54 +65,54 @@
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-    <div class="img-rounded">
-        <img src="{% static 'img/GRAVITASLOGO.png' %}" width=50%  height=50%>
-    </div>
-    <div class="quote">
-       <!-- <hr class="featurette-divider"> -->
-        <br>
-        <p id="quote"></p>
-        <hr class="featurette-divider">
-    </div>
-<br>
-<br>
-    <div class="container marketing">
 
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-rounded" src="{% static 'img/Logo_quiz.png' %}" alt="Quiz" width="140" height="140">
-          <h2>Quiz</h2>
-          <p>Gravitas have several quizzes on lecture material from different subjects.</p>
-          <p><a class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Go to quizzes &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-rounded" src="{% static 'img/Logo_doc.png' %}" alt="doc" width="120" height="140">
-          <h2>Documents</h2>
-          <p>You can view documents uploaded by the lecturers here.</p>
-          <p><a class="btn btn-default" href="#" role="button">View documents &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-rounded" src="{% static 'img/Logo_plan.png' %}" alt="plan" width="140" height="140">
-          <h2>Schedule</h2>
-          <p>Here you can view your schedule. Powered by 1024.no</p>
-          <p><a class="btn btn-default" href="{% url 'staticpages:schedule' %}" role="button">View schedule &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <div class="container-marketing">
+        <div class="img-rounded">
+            <img src="{% static 'img/GRAVITASLOGO.png' %}" width=50%  height=50%>
         </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="{% static 'img/StudyStudents.jpg' %}" alt="Generic placeholder image">
+        <div class="quote">
+           <!-- <hr class="featurette-divider"> -->
+            <br>
+            <p id="quote"></p>
+            <hr class="featurette-divider">
         </div>
+            <br>
+            <br>
+          <!-- Three columns of text below the carousel -->
+          <div class="row">
+            <div class="col-lg-4">
+              <img class="img-rounded" src="{% static 'img/Logo_quiz.png' %}" alt="Quiz" width="140" height="140">
+              <h2>Quiz</h2>
+              <p>Gravitas have several quizzes on lecture material from different subjects.</p>
+              <p><a class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Go to quizzes &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img class="img-rounded" src="{% static 'img/Logo_doc.png' %}" alt="doc" width="120" height="140">
+              <h2>Documents</h2>
+              <p>You can view documents uploaded by the lecturers here.</p>
+              <p><a class="btn btn-default" href="#" role="button">View documents &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img class="img-rounded" src="{% static 'img/Logo_plan.png' %}" alt="plan" width="140" height="140">
+              <h2>Schedule</h2>
+              <p>Here you can view your schedule. Powered by 1024.no</p>
+              <p><a class="btn btn-default" href="{% url 'staticpages:schedule' %}" role="button">View schedule &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+          </div><!-- /.row -->
+
+
+          <!-- START THE FEATURETTES -->
+
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+              <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+              <img class="featurette-image img-responsive center-block" src="{% static 'img/StudyStudents.jpg' %}" alt="StudyPicture" width="80%" hight="80%">
+            </div>
       </div>
 <!--
       <hr class="featurette-divider">
@@ -132,4 +132,5 @@
     </div>
       <!-- /END THE FEATURETTES -->
     <script src="{% static "js/random-quote.js" %}"></script>
+    </div>
 {% endblock %}

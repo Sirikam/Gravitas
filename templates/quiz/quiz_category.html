@@ -1,8 +1,10 @@
-
+{% extends 'staticpages/navbar.html' %}
+{% load staticfiles %}
+{% block content %}
 {% load i18n %}
 
 {% block page_title %}
-    Quizzes related to {{ category.name }}
+    <h2>Quizzes related to {{ category.name }}</h2>
 {% endblock %}
 
 {% block header %}
@@ -25,4 +27,5 @@
         <p>There are no quizzes.</p>
     {% endif %}
 
+{% endblock %}
 {% endblock %}

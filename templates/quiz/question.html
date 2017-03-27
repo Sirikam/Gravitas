@@ -1,10 +1,12 @@
-
+{% extends 'staticpages/navbar.html' %}
+{% load staticfiles %}
+{% block content %}
 
 {% load quiz_tags %}
 {% load i18n %}
 
 {% block page_title %}
-    {{ quiz.title }}
+    <h2>{{ quiz.title }}</h2>
 {% endblock %}
 
 {% block header %}
@@ -13,7 +15,7 @@
 
 {% block article %}
 
-{{ quiz.description }}
+    <h4>{{ quiz.description }}</h4>
 
 {% if previous %}
 
@@ -64,4 +66,5 @@
 
 <hr />
 
+{% endblock %}
 {% endblock %}
