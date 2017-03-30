@@ -210,7 +210,7 @@ a:hover {
 }
 
 /* Custom default button */
-.btn-default{
+.btn-default:default{
   color: white;
 }
 
@@ -426,4 +426,7 @@ footer{
 li{
   color: dimgray;
   text-shadow: none;
+}
+.col-lg-4 a{
+  color: white;
 }
