@@ -73,12 +73,13 @@
         <div class="welcome">
            <!-- <hr class="featurette-divider"> -->
             <br>
+            {% if user.is_authenticated %}
             <p id="welcome">Welcome to Gravitas, {{ user.username }}!</p>
+            {% endif %}
             <hr class="featurette-divider">
         </div>
         <div class="quote">
            <!-- <hr class="featurette-divider"> -->
-            <br>
             <p id="quote"></p>
             <hr class="featurette-divider">
         </div>

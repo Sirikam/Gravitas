@@ -230,7 +230,7 @@ body {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  background-color: #33bce6;
+  background-color: dodgerblue;
 
 }
 
@@ -405,5 +405,5 @@ body {
   padding-top: 60px;
 }
 #welcome{
-  color: deepskyblue;
+  color: dodgerblue;
 }
