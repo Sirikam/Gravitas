@@ -370,6 +370,10 @@ body {
   margin-top: 120px;
   margin-left: 50px;
   margin-right: 50px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 .img-rounded{
 
@@ -389,4 +393,11 @@ body {
   text-shadow: none;
   margin-left: 15%;
   margin-right: 15%;
+}
+
+.featurette-image{
+  border-radius: 25px;
+}
+.col-md-5{
+  padding-top: 60px;
 }
