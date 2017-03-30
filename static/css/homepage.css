@@ -345,6 +345,7 @@ body {
   .mastfoot {
     position: fixed;
     bottom: 0;
+    padding-top: 20px;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
@@ -402,8 +403,14 @@ body {
   border-radius: 25px;
 }
 .col-md-5{
-  padding-top: 60px;
+  padding-top: 5%;
 }
 #welcome{
   color: dodgerblue;
+}
+footer{
+  padding-top: 2%;
+}
+.foot{
+  color: white;
 }
