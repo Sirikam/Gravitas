@@ -42,7 +42,7 @@
                     <li><a hfref="...">Home</a></li>
                     <li><a href="...">Logout</a></li>
                    {% else %}
-                    <li><a href="{% url 'admin' %}">Register</a></li>
+                    <li><a href="{% url 'admin:index' %}">Register</a></li>
                     <li><a href="{% url 'staticpages:login' %}">Log in</a></li>
                    {% endif %}
                 </ul>
