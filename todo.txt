@@ -17,5 +17,14 @@
 	- Dynamisk linking til hver quiz, basert p� course + quiz navn.
 	- finne ut hvordan man kan bruke databasen i javascriptet, basert p� l�sningen over.
 	- lagre resultatet av quizzen hos brukeren, slik at man kan tracke progress.
-		
-		
+
+
+10. legg til magrin på navbaren sånn at iconet der har sammen "luft" over og under
+
+11. finn en mer passende farge på bakgrunn og knapper.
+
+12. gjør hvit tekst i quizzen til sort tekst
+
+13. (lavt prioritert) få tilbake den funktionaliteten som gjorde at navbaren funket på minimert side.
+
+14. 
