@@ -44,16 +44,19 @@ body {
 
 .navbar-custom .navbar-nav > li > a {
     color:#fff;
+    text-shadow: none;
 }
 
 .navbar-custom .navbar-nav > .active > a {
     color: #ffffff;
     background-color:transparent;
+    text-shadow: none;
 }
 
 .navbar-custom .navbar-nav > li > a:hover{
   color: #33bce6;
   background-color: white;
+  text-shadow: none;
 }
 .navbar-custom .navbar-nav > li > a{
   color: black;
@@ -400,4 +403,7 @@ body {
 }
 .col-md-5{
   padding-top: 60px;
+}
+#welcome{
+  color: deepskyblue;
 }
