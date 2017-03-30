@@ -4,7 +4,7 @@ from django.template import Context, loader
 from .models import Course
 from apps.documents.models import Document
 from apps.users.models import User
-from apps.quiz.models import Quiz, Question, Answer
+from apps.quiz.models import Quiz, Question, Answer, Category
 from apps.users.models import Person
 
 from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
@@ -42,5 +42,8 @@ def view(request, course_id):
     return render(request, 'courses/course_template.html',
                   {'current_course':current_course,
                    'participants':participants,
-                   'Course':Course.objects.all()
+                   'Course':Course.objects.all(),
+                   'Quiz':Quiz.objects.all(),
+                   'categories': Category.objects.all(),
+
                   })

@@ -15,11 +15,20 @@
 </div>
 <div>
 
+    {% if categories %}
+        <ul>
+        {% for category in categories %}
+            {% ifequal current_course|stringformat:"s" category.name  %}
+            <li>
+                <a href="{% url "quiz:quiz_category" category.id %}">
+                    {{ category.name }}
+                </a>
+            </li>
+            {% endifequal %}
+        {% endfor %}
+        </ul>
+    {% endif %}
 
-
-    {% for item in participants %}
-        <p> {{ item.first_name }}{{ item.last_name }}</p>
-    {% endfor %}
 </div>
 
 
