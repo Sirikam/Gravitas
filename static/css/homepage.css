@@ -210,14 +210,23 @@ a:hover {
 }
 
 /* Custom default button */
+.btn-default{
+  color: white;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+  color: black;
+}
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #33bce6;
+  background-color: dodgerblue;
   border: 1px solid #fff;
 }
+
+
 
 
 /*
@@ -392,7 +401,7 @@ body {
   list-style-type: none;
 }
 .quote{
-  font-size: 30px;
+  font-size: 25px;
   color: dimgray;
   text-shadow: none;
   margin-left: 15%;
@@ -413,4 +422,8 @@ footer{
 }
 .foot{
   color: white;
+}
+li{
+  color: dimgray;
+  text-shadow: none;
 }
