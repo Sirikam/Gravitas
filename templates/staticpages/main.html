@@ -39,7 +39,7 @@
                 <ul class="nav masthead-nav">
                   {% if user.is_authenticated %}
                     <li class="navbar-text">Welcome, {{ user.username }}!  </li>
-                    <li><a hfref="...">Home</a></li>
+                    <li><a hfref="{% url 'staticpages:homepage' %}">Home</a></li>
                     <li><a href="...">Logout</a></li>
                    {% else %}
                     <li><a href="{% url 'admin:index' %}">Register</a></li>

@@ -9,17 +9,46 @@
     <h2>Exam Paper Result</h2>
 {% endblock %}
 
-{% block header %}
-<h3>Exam Paper Result</h3>
-{% endblock %}
 
 
 {% block article %}
 
-    <h4>Exam Results</h4>
+{# Score #}
 
+    <p>
+        <small class="muted">Exam title:</small>
+        <strong>{{ quiz.title }}</strong>
+    </p>
+
+<hr />
+
+<div>
+        <h3>Your grade:</h3>
+        {% if percent <= 40  %}
+            <h1>F</h1>
+        {% elif percent  >= 41 and percent <= 52 %}
+            <h1>E</h1>
+        {% elif percent  >= 53 and percent <= 64 %}
+            <h1>D</h1>
+        {% elif percent  >= 65 and percent <= 76 %}
+            <h1>C</h1>
+        {% elif percent  >= 77 and percent <= 88 %}
+            <h1>B</h1>
+        {% else %}
+            <h1>A</h1>
+        {% endif %}
+
+        <p class="lead">
+            You answered <b>{{ score }}</b> questions correctly out of <b>{{ max_score }}</b>, giving you <b>{{ percent }}</b> percent correct.
+        </p>
+
+        <p class="buttontext"><a class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Back to quizes</a></p>
+
+        <p>Review the questions below and try the exam again in the future.</p>
+</div>
+<hr/>
 {% if previous %}
-    <p class="muted"><small>The previous question:</small></p>
+    <p> The previous question:</p>
     <p>{{ previous.previous_question }}</p>
     <p>
         Your answer was <em>{{ previous.previous_answer }}</em>
@@ -35,24 +64,8 @@
 
 {% endif %}
 
-{# Score #}
 
-<hr />
-
-<div>
-    <h2>Exam results</h2>
-    <p>
-        <small class="muted">Exam title:</small>
-        <strong>{{ quiz.title }}</strong></p>
-
-        <p class="lead">
-            You answered {{ score }} questions correctly out of {{ max_score }}, giving you {{ percent }} percent correct
-        </p>
-
-        <p>Review the questions below and try the exam again in the future.</p>
-</div>
-
-<hr />
+<hr/>
 
 {% if questions %}
     {% for question in questions %}
