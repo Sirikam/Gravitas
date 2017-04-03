@@ -53,15 +53,15 @@
 <br />
 
 {% if question %}
+    <div class="questions">
+        <p>
+            <small class="muted">Question category:</small>
+            <strong>{{ question.category }}</strong>
+        </p>
 
-    <p>
-        <small class="muted">Question category:</small>
-        <strong>{{ question.category }}</strong>
-    </p>
-
-    <p class="lead">{{ question.content }}</p>
-    {% answers_for_question question quiz %}
-
+        <p class="lead">{{ question.content }}</p>
+        {% answers_for_question question quiz %}
+    </div>
 {% endif %}
 
 <hr />

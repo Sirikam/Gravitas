@@ -35,6 +35,6 @@
   font-size: 25px;
   background: #f6f6f6;
 }
-.lead p{
+.questions ul, li{
     color: dimgrey;
 }
