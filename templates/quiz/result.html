@@ -48,13 +48,20 @@
 </div>
 <hr/>
 {% if previous %}
-    <p> The previous question:</p>
-    <p>{{ previous.previous_question }}</p>
-    <p>
-        Your answer was <em>{{ previous.previous_answer }}</em>
-        which is <strong>{{ previous.previous_outcome }}</strong>
-    </p>
 
+        <p> The previous question:</p>
+        <p>{{ previous.previous_question }}</p>
+    <div>
+        {% ifequal previous.previous_outcome 'correct' %}
+            <div class="alert alert-success">
+            {% else %}
+            <div class="alert alert-error">
+            {% endifequal %}
+        <p>
+            Your answer was <em>{{ previous.previous_answer }}</em>
+            which is <strong>{{ previous.previous_outcome }}</strong>
+        </p>
+    </div>
     {% correct_answer previous %}
 
     <p><strong>Explanation:</strong></p>

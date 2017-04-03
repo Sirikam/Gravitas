@@ -17,12 +17,29 @@
 
     <h4>{{ quiz.description }}</h4>
 
+<br />
+
+{% if question %}
+    <div class="questions">
+        <p>
+            <small class="muted">Question category:</small>
+            <strong>{{ question.category }}</strong>
+        </p>
+
+        <p class="lead">{{ question.content }}</p>
+        {% answers_for_question question quiz %}
+    </div>
+{% endif %}
+
+
+<hr />
+
 {% if previous %}
 
     {# Show the result of the previous question #}
     {# if it must be shown after each answer    #}
 
-    <p class="muted"><small>The previous question:</small></p> 
+    <p class="muted"><small>The previous question:</small></p>
     <p>{{ previous.previous_question }}</p>
 
     {% ifequal previous.previous_outcome 'correct' %}
@@ -46,21 +63,6 @@
         <p>{{ previous.previous_question.explanation }}</p>
     </div>
 
-<hr />
-
-{% endif %}
-
-<br />
-
-{% if question %}
-
-    <p>
-        <small class="muted">Question category:</small>
-        <strong>{{ question.category }}</strong>
-    </p>
-
-    <p class="lead">{{ question.content }}</p>
-    {% answers_for_question question quiz %}
 
 {% endif %}
 

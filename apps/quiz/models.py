@@ -1,12 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-# Uncomment this and "choices" in the Category model
-# to prepopulate the categories
-# CATEGORY_CHOICES = (('Endocrinology', 'Endocrinology'),
-#                     ('Dermatology', 'Dermatology'),
-#                     ('Psychiatry', 'Psychiatry'),
-#                     ('Cardiology', 'Cardiology'))
 
 
 class Category(models.Model):

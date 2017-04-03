@@ -433,3 +433,11 @@ li{
 .buttontext{
   color: white;
 }
+#logout{
+  float: right;
+  font-size: 10px;
+  color: black;
+  text-shadow: none;
+  padding-top: 4%;
+  padding-right: 1%
+}
