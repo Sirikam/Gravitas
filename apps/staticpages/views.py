@@ -1,14 +1,14 @@
 from django.shortcuts import render
 
-# Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader
 from django.views.generic import TemplateView
 from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
 from django.urls import resolve
 from apps.users.models import Person
 from apps.courses.models import Course
-
+from django.contrib.auth import authenticate, login, logout
+from Gravitas import settings
 
 
 class StaticView(TemplateResponseMixin, ContextMixin, View):
