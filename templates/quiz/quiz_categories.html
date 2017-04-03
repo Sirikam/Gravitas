@@ -1,11 +1,18 @@
 {% extends 'staticpages/navbar.html' %}
 {% load staticfiles %}
 {% block content %}
+<link href="{% static 'css/quiz.css' %}" rel="stylesheet">
 
 {% block page_title %}
     <h2>Quiz categories</h2>
 {% endblock %}
 
+    <img class="img-rounded" src="{% static 'img/Logo_quiz.png' %}" alt="Quiz" width="160" height="160">
+    <br>
+    <br>
+    <p>We have gathered your available quizzes in the categories below. Click one of them to start your learning experience! </p>
+
+    <hr/>
 {% block header %}
     <h3>Categories</h3>
 {% endblock %}
