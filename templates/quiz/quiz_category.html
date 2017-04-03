@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block article %}
-
+    <div class="quizlist">
     {% if quizzes %}
         <ul>
         {% for quiz in quizzes %}
@@ -33,6 +33,6 @@
     {% else %}
         <p>There are no quizzes.</p>
     {% endif %}
-
+    </div>
 {% endblock %}
 {% endblock %}

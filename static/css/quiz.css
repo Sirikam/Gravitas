@@ -1,26 +1,26 @@
 
-ul,li {
+.quizlist ul,li {
   list-style-type: none;
   color: dimgray;
   font-size: 20px;
 }
-ul {
+.quizlist ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-li {
+.quizlist li {
   border-bottom: 1px solid #ccc;
 }
 
-li:last-child {
+.quizlist li:last-child {
   border: none;
 }
 
-li a {
+.quizlist li a {
   text-decoration: none;
-  color: #000;
+  color: dimgrey;
   display: inline-block;
   width: 200px;
 
@@ -31,7 +31,7 @@ li a {
   transition: font-size 0.3s ease, background-color 0.3s ease;
 }
 
-li a:hover {
+.quizlist li a:hover {
   font-size: 25px;
   background: #f6f6f6;
 }
