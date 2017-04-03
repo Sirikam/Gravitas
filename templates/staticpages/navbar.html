@@ -50,12 +50,16 @@
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
-                <li><a href="{%  url 'staticpages:schedule' %}">SCHEDULE</a></li>
+                <li><a href="{% url 'staticpages:schedule' %}">SCHEDULE</a></li>
                 <li><a href="{% url 'staticpages:contact' %}">CONTACT</a></li>
               </ul>
             </div>
           </div>
-          <a id="logout" href="...">Logout</a>
+
+          <form method="get" action="{% url 'staticpages:logout' %}">
+              {% csrf_token %}
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+          </form>
         </nav>
 
       </div>

@@ -11,6 +11,10 @@ from django.contrib.auth import authenticate, login, logout
 from Gravitas import settings
 
 
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
 class StaticView(TemplateResponseMixin, ContextMixin, View):
     def get(self, request, *args, **kwargs):
         context = self.get_context_data(**kwargs)
