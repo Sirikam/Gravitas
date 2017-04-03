@@ -43,7 +43,7 @@
             You answered <b>{{ score }}</b> questions correctly out of <b>{{ max_score }}</b>, giving you <b>{{ percent }}</b> percent correct.
         </p>
 
-        <p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Back to quizes</a></p>
+        <p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_take' quiz.id %}" role="button">Restart quiz</a></p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Back to quizes</a></p>
 
         <p>Review the questions below and try the exam again in the future.</p>
 </div>
