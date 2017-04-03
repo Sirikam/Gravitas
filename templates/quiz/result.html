@@ -1,6 +1,7 @@
 {% extends 'staticpages/navbar.html' %}
 {% load staticfiles %}
 {% block content %}
+    <link href="{% static 'css/quiz.css' %}" rel="stylesheet">
 
 {% load quiz_tags %}
 {% load i18n %}
@@ -42,7 +43,7 @@
             You answered <b>{{ score }}</b> questions correctly out of <b>{{ max_score }}</b>, giving you <b>{{ percent }}</b> percent correct.
         </p>
 
-        <p class="buttontext"><a class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Back to quizes</a></p>
+        <p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Back to quizes</a></p>
 
         <p>Review the questions below and try the exam again in the future.</p>
 </div>
@@ -55,7 +56,7 @@
         {% ifequal previous.previous_outcome 'correct' %}
             <div class="alert alert-success">
             {% else %}
-            <div class="alert alert-error">
+            <div class="alert alert-danger">
             {% endifequal %}
         <p>
             Your answer was <em>{{ previous.previous_answer }}</em>
