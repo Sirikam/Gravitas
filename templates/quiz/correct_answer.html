@@ -5,13 +5,13 @@
     </div>
 {% endif %}
 
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered" id="answertable">
     <tbody>
     {% for answer in answers %}
         {% if answer.correct %}
             <tr class="success">
                 <td>{{ answer.content }}</td>
-                <td><strong>correct answer</strong></td>
+                <td><strong>Correct answer</strong></td>
             </tr>
         {% else %}
             <tr>

@@ -35,6 +35,21 @@
   font-size: 25px;
   background: #f6f6f6;
 }
-.questions ul, li{
+#answerchoice {
     color: dimgrey;
+    text-shadow: none;
+    font-weight: normal;
+}
+tbody {
+    color: dimgrey;
+    text-shadow: none;
+    font-weight: normal;
+}
+#answertable{
+    color: dimgrey;
+    text-shadow: none;
+    font-weight: normal;
+}
+.buttontext{
+    color: white;
 }
