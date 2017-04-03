@@ -1,6 +1,7 @@
 {% extends 'staticpages/navbar.html' %}
 {% load staticfiles %}
 {% block content %}
+    <link href="{% static 'css/quiz.css' %}" rel="stylesheet">
 
 {% load quiz_tags %}
 {% load i18n %}
@@ -10,7 +11,6 @@
 {% endblock %}
 
 {% block header %}
-    <h3>{{ quiz.title }}</h3>
 {% endblock %}
 
 {% block article %}

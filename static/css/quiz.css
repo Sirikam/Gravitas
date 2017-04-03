@@ -1,5 +1,5 @@
 
-.quizlist ul,li {
+.quizlist li {
   list-style-type: none;
   color: dimgray;
   font-size: 20px;
@@ -34,4 +34,7 @@
 .quizlist li a:hover {
   font-size: 25px;
   background: #f6f6f6;
+}
+.lead p{
+    color: dimgrey;
 }
