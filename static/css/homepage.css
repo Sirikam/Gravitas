@@ -436,6 +436,9 @@ li{
 #logout{
   float: right;
   font-size: 10px;
-  color: black;
+  color: white;
   text-shadow: none;
+  background-color: black;
+  border-radius: 10px;
+  border: hidden;
 }

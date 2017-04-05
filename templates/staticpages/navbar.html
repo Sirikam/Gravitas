@@ -55,11 +55,11 @@
               </ul>
             </div>
           </div>
-
           <form method="get" action="{% url 'staticpages:logout' %}">
               {% csrf_token %}
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+            <button id="logout"  type="submit">Logout</button>
           </form>
+
         </nav>
 
       </div>
