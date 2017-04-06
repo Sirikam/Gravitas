@@ -61,13 +61,15 @@ def quiz_take(request, quiz_id):
         #  use existing quiz
         return load_next_question(request, previous_sitting, quiz)
 
-
+questions_answered = 0
 @login_required
 def load_next_question(request, sitting, quiz):
     """
     Load the next question, including outcome of
     previous question, using the sitting
     """
+    max_score = quiz.question_set.all().count()
+    questions_answered = 0
     previous = {}
 
     if 'guess' in request.GET and request.GET['guess']:
@@ -75,11 +77,12 @@ def load_next_question(request, sitting, quiz):
         #  returns a dictionary with previous question details
         previous = question_check(request, quiz, sitting)
         sitting.remove_first_question()  # remove the first question
-
+        questions_answered += 1
     question_ID = sitting.get_next_question()
 
     if not question_ID:
         #  no questions left
+        questions_answered += 1
         return final_result(request, sitting, previous)
 
     next_question = Question.objects.get(id=question_ID)
@@ -90,6 +93,8 @@ def load_next_question(request, sitting, quiz):
                               {'quiz': quiz,
                                'question': next_question,
                                'previous': previous,
+                               'questions_answered': questions_answered,
+                               'max_score': max_score,
                                },
                               #context_instance=RequestContext(request)
                               )
