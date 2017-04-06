@@ -53,7 +53,12 @@
                 </li>
                 <li><a href="{% url 'staticpages:schedule' %}">SCHEDULE</a></li>
                 <li><a href="{% url 'quiz:quiz_categories' %}">QUIZ</a></li>
-                <li><a href="{% url 'documents:index' %}">DOCUMENTS</a></li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DOCUMENTS<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'documents:index' %}">Add Documents Here!</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Add Documents</li>
+                    <li><a href="{% url 'documents:list' %}">Add Documents Here!</a></li>
                 <li><a href="{% url 'staticpages:contact' %}">CONTACT</a></li>
               </ul>
             </div>
