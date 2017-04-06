@@ -1,12 +1,10 @@
 from django.conf.urls import url
 from . import views
 from django.conf.urls import url
-from apps.documents.views import list, DocumentView
+from apps.documents.views import list, DocumentView, DocumentCourse_view
 
 urlpatterns = [
     url(r'^$', DocumentView.as_view(template_name='documents/main.html'), name='index'),
-    url(r'^tdt4180/$', DocumentView.as_view(template_name='documents/tdt4180.html'), name='tdt4180'),
-    url(r'^tdt4120/$', DocumentView.as_view(template_name='documents/tdt4120.html'), name='tdt4120'),
-    url(r'^tdt4145/$', DocumentView.as_view(template_name='documents/tdt4145.html'), name='tdt4145'),
     url(r'^list/$', list, name='list'),
+    url(r'^(?P<course_id>[0-9]+)/$', DocumentCourse_view, name='DocCourseView')
 ]

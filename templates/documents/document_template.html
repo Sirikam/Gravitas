@@ -1,0 +1,21 @@
+{% extends 'staticpages/navbar.html' %}
+{%  load staticfiles %}
+{% block content %}
+    <div>
+        <h1>{{ current_course }}</h1>
+        <p>Velkommen til en dokumentoversikt for {{ current_course }}. Her kan du se en liste over alle dokumenter som ligger tilgjengelig i faget</p>
+
+    </div>
+    <div>
+    {% if Documents %}
+            <ul>
+                {% for document in Documents %}
+                    {% ifequal current_course document.course %}
+                    <li><a href="{{ document.docfile.url }}">Document name: {{ document.name }}, Course: {{ document.course }}, User: {{ document.user }}</a></li>
+                    {% endifequal %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No documents.</p>
+        {% endif %}
+{% endblock %}

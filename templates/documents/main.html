@@ -9,6 +9,6 @@
 </br>
 <!-- linker til de forskjellige emnesidene med dokumentene -->
 {% for course in Course %}
-    <a href="#">{{ course.course_code }}</a>
+    <a href="/documents/{{ course.id }}/">{{ course.course_code }} </a>
 {% endfor %}
 {%  endblock %}

@@ -1,10 +1,5 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.template import Context, loader
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.views.generic import FormView
 from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
 from django.urls import resolve
 
@@ -12,6 +7,8 @@ from django.urls import resolve
 from apps.documents.models import Document
 from apps.documents.forms import DocumentForm
 from apps.courses.models import Course
+from apps.users.models import User
+from apps.users.models import Person
 
 @login_required()
 def list(request):
@@ -67,6 +64,11 @@ class DocumentView(TemplateResponseMixin, ContextMixin, View):
 
         return self.render_to_response(context)
 
+def DocumentCourse_view(request, course_id):
+    current_course= Course.objects.filter(pk=course_id).get()
 
-
-
+    return render(request, 'documents/document_template.html',
+                  {'current_course':current_course,
+                   'Course':Course.objects.all(),
+                   'Documents':Document.objects.all(),
+                  })
