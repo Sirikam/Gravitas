@@ -61,14 +61,10 @@
                     <li><a href="{% url 'documents:list' %}">Add Documents Here!</a></li>
                   </ul>
                 </li>
+                <li><a href="{% url 'staticpages:logout' %}">LOGOUT</a></li>
               </ul>
             </div>
           </div>
-          <form method="get" action="{% url 'staticpages:logout' %}">
-              {% csrf_token %}
-            <button id="logout"  type="submit">Logout</button>
-          </form>
-
         </nav>
 
       </div>
