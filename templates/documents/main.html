@@ -3,7 +3,10 @@
 {% load staticfiles %}
 <!-- Dette er siden der du kan velge hvilket fag du vil lese dokumentene fra.-->
 <h1>Documents</h1>
-
+<img src="{% static 'img/Logo_doc.png' %}" alt="contact us" width="80px" hight="100px">
+</br>
+<p>Here's a list of all your subjects. Click one of the to view the available documents for that subject.</p>
+</br>
 <!-- linker til de forskjellige emnesidene med dokumentene -->
 {% for course in Course %}
     <a href="#">{{ course.course_code }}</a>
