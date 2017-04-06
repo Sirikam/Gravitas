@@ -1,25 +1,37 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import Context, loader
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.views.generic import FormView
 from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
 from django.urls import resolve
+
 
 from apps.documents.models import Document
 from apps.documents.forms import DocumentForm
 from apps.courses.models import Course
 
+@login_required()
 def list(request):
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
+
         if form.is_valid():
-            newdoc = Document(docfile=request.FILES['docfile'])
+            newdoc = form.save(commit=False)
+            newdoc.user = request.user
+            newdoc.docfile = request.FILES['docfile']
             newdoc.save()
 
             # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse('list'))
+            return render(
+                request, 'documents/list.html', {
+                    'documents': Document.objects.all(),
+                    'form': form,
+                    'Course': Course.objects.all()}
+            )
     else:
         form = DocumentForm()  # A empty, unbound form
 
@@ -33,7 +45,6 @@ def list(request):
         'form': form,
         'Course': Course.objects.all()}
     )
-
 
 class DocumentView(TemplateResponseMixin, ContextMixin, View):
     def get(self, request, *args, **kwargs):
