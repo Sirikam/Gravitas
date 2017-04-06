@@ -44,7 +44,15 @@
         </p>
 
         <p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_take' quiz.id %}" role="button">Restart quiz</a></p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Back to quizes</a></p>
-
+</br>
+<p>Progress:</p>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="{{ questions_answered }}" aria-valuemin="0" aria-valuemax="{{ max_score }}" style="width:100%">
+      100%
+  </div>
+</div>
+<hr />
         <p>Review the questions below and try the exam again in the future.</p>
 </div>
 <hr/>
