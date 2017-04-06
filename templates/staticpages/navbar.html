@@ -46,9 +46,9 @@
                       {% endfor %}
 
                     <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li class="dropdown-header">Quiz and Docs</li>
+                    <li><a href="{% url 'quiz:quiz_categories' %}">Quizzes for all subjects</a></li>
+                    <li><a href="{% url 'documents:index' %}">Documents for all subjects</a></li>
                   </ul>
                 </li>
                 <li><a href="{% url 'staticpages:schedule' %}">SCHEDULE</a></li>
