@@ -22,7 +22,7 @@
     </p>
 
 <hr />
-
+<!-- a grade display based upon your performance in the quiz -->
 <div>
         <h3>Your grade:</h3>
         {% if percent <= 40  %}
@@ -45,6 +45,7 @@
 
         <p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_take' quiz.id %}" role="button">Restart quiz</a></p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Back to quizes</a></p>
 </br>
+<!-- a progressbar for the quiz, which displayes the amuount of questions answered-->
 <p>Progress:</p>
 <div class="progress">
   <div class="progress-bar progress-bar-striped active" role="progressbar"
@@ -56,6 +57,7 @@
         <p>Review the questions below and try the exam again in the future.</p>
 </div>
 <hr/>
+    <!-- viewing the last question of the quiz-->
 {% if previous %}
 
         <p> The previous question:</p>
@@ -85,6 +87,7 @@
 
 <hr/>
 
+    <!-- check if you have seen the results before, if you have, they wont be displayed on the result page-->
 {% if questions %}
     {% for question in questions %}
         <p class="lead">{{ question.content }}</p>
@@ -94,6 +97,10 @@
     <p>You have already seen answers after each question so we are not displaying
         them again here.</p>
 {% endif %}
+
+<div>
+    <a href="#"> Gi tilbakemelding!</a>
+</div>
 
 {% endblock %}
 {% endblock %}

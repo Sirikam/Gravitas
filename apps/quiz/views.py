@@ -4,7 +4,9 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.shortcuts import render, get_object_or_404
 from apps.quiz.models import Category, Quiz, Sitting, Question, Answer
+from apps.quiz.forms import FeedbackForm, QuizAdminForm
 from apps.courses.models import *
+from apps.documents.models import Document
 from django.contrib.auth.decorators import login_required
 
 
@@ -13,6 +15,8 @@ def index(request):
     return render(request, 'quiz/quiz_categories.html', {
         'categories': Category.objects.all(),
         'Course':Course.objects.all(),
+        'Quiz': Quiz.objects.all(),
+        'documents': Document.objects.all(),
     })
 
 
@@ -24,6 +28,8 @@ def view_category(request, category_id):
         'category': category,
         'quizzes': quizzes,
         'Course':Course.objects.all(),
+        'Quiz': Quiz.objects.all(),
+        'documents': Document.objects.all(),
     })
 
 
@@ -95,6 +101,9 @@ def load_next_question(request, sitting, quiz):
                                'previous': previous,
                                'questions_answered': questions_answered,
                                'max_score': max_score,
+                               'Quiz': Quiz.objects.all(),
+                               'Course': Course.objects.all(),
+                               'documents': Document.objects.all()
                                },
                               #context_instance=RequestContext(request)
                               )
@@ -148,7 +157,11 @@ def final_result(request, sitting, previous):
             'score': score,
             'max_score': max_score,
             'percent': percent,
-            'previous': previous},
+            'previous': previous,
+            'Quiz': Quiz.objects.all(),
+            'Course':Course.objects.all(),
+            'documents':Document.objects.all()
+        },
           #  context_instance=RequestContext(request)
                                   )
     else:  # show all questions and answers
@@ -159,6 +172,33 @@ def final_result(request, sitting, previous):
             'max_score': max_score,
             'percent': percent,
             'questions': questions,
-            'incorrect_questions': incorrect},
+            'incorrect_questions': incorrect,
+            'Quiz': Quiz.objects.all(),
+            'Course': Course.objects.all(),
+            'documents': Document.objects.all()
+        },
           # context_instance=RequestContext(request)
          )
+
+#view for inputting feedback to a quiz
+@login_required()
+def feedbackView(request, quiz_id):
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            newfeed = form.save(commit=False)
+            newfeed.user = request.user()
+            newfeed.quiz = quiz_id
+            newfeed.save()
+
+            return render(request, 'staticpages/post_succesful.html',{
+                'quiz':Quiz.objects.all(),
+                'Course':Course.objects.all(),
+                'documents':Document.objects.all()
+            })
+    else:
+        return render(request, 'quiz/quiz_feedback.html', {
+            'quiz': Quiz.objects.all(),
+            'Course': Course.objects.all(),
+            'documents': Document.objects.all()
+        })

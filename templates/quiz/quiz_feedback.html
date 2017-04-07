@@ -1,0 +1,9 @@
+<form action="{% url 'quiz:quiz_feedback' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+    <p>Hei {{ user }}, vil du legge igjen en tilbakemelding?</p><br>
+
+        {{ form.as_p}}
+
+        <p><input type="submit" value="Upload"/></p>
+</form>

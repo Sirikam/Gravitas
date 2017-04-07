@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.contrib.auth.models import User
 
 
 
@@ -259,3 +260,10 @@ class Sitting(models.Model):
         # list of strings ie [32,19,22,3,75]
         split_questions = question_list.split(',')
         return split_questions
+
+
+class Quiz_feedback(models.Model):
+    quiz = models.ForeignKey(Quiz)
+    user = models.ForeignKey(User)
+    feedback = models.TextField(max_length=2000)
+

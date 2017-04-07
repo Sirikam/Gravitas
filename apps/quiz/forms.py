@@ -1,5 +1,5 @@
 from django import forms
-from .models import Question, Quiz
+from .models import Question, Quiz, Quiz_feedback
 from django.contrib.admin.widgets import FilteredSelectMultiple
 
 
@@ -27,3 +27,8 @@ class QuizAdminForm(forms.ModelForm):
             quiz.question_set = self.cleaned_data['questions']
             self.save_m2m()
         return quiz
+
+class FeedbackForm(forms.ModelForm):
+     class Meta:
+         model = Quiz_feedback
+         fields = ['feedback']

@@ -11,4 +11,5 @@
 
 13. (lavt prioritert) få tilbake den funktionaliteten som gjorde at navbaren funket på minimert side.
 
-14.
+14. lage en linking i quiz url på formen url(r'^take/(?P<quiz_id>[0-9]+/$guess=<question_id>[0-9]+)/', og
+bind det til

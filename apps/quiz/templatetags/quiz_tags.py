@@ -59,3 +59,11 @@ def user_previous_exam(context, exam):
     percent = int(round((float(final_score) / float(possible_score)) * 100))
     return {'title': title, 'score': final_score,
             'possible': possible_score, 'percent': percent, }
+
+@register.inclusion_tag('quiz/quiz_feedback.html')
+def user_feedback(quiz):
+    """
+    Provides a from to give feedback at the end of the quiz
+    """
+
+    return {'quiz': quiz}
