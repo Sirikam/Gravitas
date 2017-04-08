@@ -7,7 +7,7 @@ class DocumentForm(forms.ModelForm):
 
     class Meta:
         model = Document
-        fields = ['course','name', 'private']
+        fields = ['course','name','private']
 
     docfile = forms.FileField(label='Select a file')
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Quiz, Category, Question, Answer
+from .models import Quiz, Category, Question, Answer, Quiz_feedback
 from .forms import QuizAdminForm
 
 
@@ -38,3 +38,4 @@ class QuestionAdmin(admin.ModelAdmin):
 admin.site.register(Quiz, QuizAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Question, QuestionAdmin)
+admin.site.register(Quiz_feedback)

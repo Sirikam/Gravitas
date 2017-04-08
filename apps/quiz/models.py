@@ -20,7 +20,7 @@ class Category(models.Model):
         verbose_name = "Category"
         verbose_name_plural = "Categories"
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -63,7 +63,7 @@ class Quiz(models.Model):
         verbose_name = "Quiz"
         verbose_name_plural = "Quizzes"
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -91,7 +91,7 @@ class Question(models.Model):
         verbose_name_plural = "Questions"
         ordering = ['category']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.content
 
 

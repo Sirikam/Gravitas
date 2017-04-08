@@ -63,7 +63,7 @@ def user_previous_exam(context, exam):
 @register.inclusion_tag('quiz/quiz_feedback.html')
 def user_feedback(quiz):
     """
-    Provides a from to give feedback at the end of the quiz
+    Provides a form to give feedback at the end of the quiz
     """
 
     return {'quiz': quiz}

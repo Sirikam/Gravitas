@@ -43,7 +43,8 @@
             You answered <b>{{ score }}</b> questions correctly out of <b>{{ max_score }}</b>, giving you <b>{{ percent }}</b> percent correct.
         </p>
 
-        <p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_take' quiz.id %}" role="button">Restart quiz</a></p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Back to quizes</a></p>
+        <p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_take' quiz.id %}" role="button">Restart quiz</a></p>
+        <p><a id="buttontext" class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Back to quizes</a></p>
 </br>
 <!-- a progressbar for the quiz, which displayes the amuount of questions answered-->
 <p>Progress:</p>
@@ -99,7 +100,8 @@
 {% endif %}
 
 <div>
-    <a href="#"> Gi tilbakemelding!</a>
+
+    <br><li><a href="{% url 'quiz:quiz_feedback' %}">Give a comment here!</a></li>
 </div>
 
 {% endblock %}

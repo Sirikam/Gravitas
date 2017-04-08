@@ -180,25 +180,29 @@ def final_result(request, sitting, previous):
           # context_instance=RequestContext(request)
          )
 
-#view for inputting feedback to a quiz
+# for posting a comment
 @login_required()
-def feedbackView(request, quiz_id):
+def FeedbackView(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():
             newfeed = form.save(commit=False)
-            newfeed.user = request.user()
-            newfeed.quiz = quiz_id
+            newfeed.user = request.user
             newfeed.save()
 
-            return render(request, 'staticpages/post_succesful.html',{
-                'quiz':Quiz.objects.all(),
-                'Course':Course.objects.all(),
-                'documents':Document.objects.all()
+            #redirect after prossing
+            return render(request, 'staticpages/post_succesful.html', {
+                'quiz': Quiz.objects.all(),
+                'Course': Course.objects.all(),
+                'documents': Document.objects.all()
             })
+
     else:
+        form = FeedbackForm() #empty unbound form
+
         return render(request, 'quiz/quiz_feedback.html', {
             'quiz': Quiz.objects.all(),
             'Course': Course.objects.all(),
-            'documents': Document.objects.all()
+            'documents': Document.objects.all(),
+            'form': form,
         })
