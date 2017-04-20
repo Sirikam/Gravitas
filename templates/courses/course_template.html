@@ -13,6 +13,8 @@
     <p>Velkommen til siden til {{ current_course }}. Her kan du se en liste over alle medlemmer, samt tilhørende dokumenter og quizzer</p>
 
 </div>
+<br>
+<h4> Here is a list of this subject's quizzes:</h4>
 <div>
 
     {% if categories %}
@@ -27,8 +29,25 @@
             {% endifequal %}
         {% endfor %}
         </ul>
+    {% else %}
+            <p>No quizzes.</p>
     {% endif %}
 
+</div>
+<br>
+<h4> Here is a list of this subject's documents:</h4>
+<div>
+    {% if Documents %}
+            <ul>
+                {% for document in Documents %}
+                    {% ifequal current_course document.course %}
+                    <li><a href="{{ document.docfile.url }}">Document name: {{ document.name }}, Course: {{ document.course }}, User: {{ document.user }}</a></li>
+                    {% endifequal %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No documents.</p>
+        {% endif %}
 </div>
 
 
