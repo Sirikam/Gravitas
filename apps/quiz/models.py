@@ -266,4 +266,5 @@ class Quiz_feedback(models.Model):
     quiz = models.ForeignKey(Quiz)
     user = models.ForeignKey(User)
     feedback = models.TextField(max_length=2000)
+    rating = models.IntegerField()
 

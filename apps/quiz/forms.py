@@ -31,4 +31,4 @@ class QuizAdminForm(forms.ModelForm):
 class FeedbackForm(forms.ModelForm):
      class Meta:
         model = Quiz_feedback
-        fields = ['feedback','quiz']
+        fields = ['feedback','quiz','rating']
