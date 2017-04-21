@@ -9,3 +9,6 @@
 12. gjør hvit tekst i quizzen til sort tekst
 
 13. (lavt prioritert) få tilbake den funktionaliteten som gjorde at navbaren funket på minimert side.
+
+14. fikse opp på tilbakemeldingssiden, den ser ikke bra ut estetisk
+
