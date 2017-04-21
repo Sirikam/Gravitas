@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
+from apps.courses.models import Course
 
 
 
@@ -11,8 +12,7 @@ class Category(models.Model):
 
     # TODO: blank/null?
     # TODO: fixed choices?
-    name = models.CharField(
-        max_length=250,
+    name = models.CharField(max_length=250,
         # choices=CATEGORY_CHOICES,
         unique=True)
 

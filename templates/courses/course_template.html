@@ -9,12 +9,12 @@
 <body>
 
 <div>
-    <h1>{{ current_course }}</h1>
+    <h1>{{ current_course }} - {{ current_course.course_name }}</h1>
     <p>Velkommen til siden til {{ current_course }}. Her kan du se en liste over alle medlemmer, samt tilhørende dokumenter og quizzer</p>
 
 </div>
 <br>
-<h4> Here is a list of this subject's quizzes:</h4>
+<h4> Heres a link to the Courses Quizzes:</h4>
 <div>
 
     {% if categories %}
@@ -41,7 +41,7 @@
             <ul>
                 {% for document in Documents %}
                     {% ifequal current_course document.course %}
-                    <li><a href="{{ document.docfile.url }}">Document name: {{ document.name }}, Course: {{ document.course }}, User: {{ document.user }}</a></li>
+                        <li><a href="{{ document.docfile.url }}">Document name: {{ document.name }}, Course: {{ document.course }}, User: {{ document.user }}</a></li>
                     {% endifequal %}
                 {% endfor %}
             </ul>

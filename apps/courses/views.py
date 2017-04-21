@@ -45,5 +45,6 @@ def view(request, course_id):
                    'Course':Course.objects.all(),
                    'Quiz':Quiz.objects.all(),
                    'categories': Category.objects.all(),
+                   'Documents':Document.objects.all(),
 
                   })
