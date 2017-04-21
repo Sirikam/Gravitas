@@ -1,10 +1,9 @@
 //TODO
 
 6. ting som fagsiden m� inneholde:
-	- en liste over dokumenter med hyperlink
-	- en liste over quizzer med hyperlink
 	- Fagleder og kordinatorerer
 	- medlemmer(studenter)
+	- linkt til quiz og documents
 
 
 12. gjør hvit tekst i quizzen til sort tekst
@@ -13,3 +12,7 @@
 
 14. lage en linking i quiz url på formen url(r'^take/(?P<quiz_id>[0-9]+/$guess=<question_id>[0-9]+)/', og
 bind det til
+
+15. Quizen må skifte navn fra math og science til fagkoder
+
+16. quizene må inneholde relevante spørsmal.
