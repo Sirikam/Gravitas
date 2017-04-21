@@ -27,7 +27,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^staticpages/', include('apps.staticpages.urls', namespace='staticpages')),
     url(r'^quiz/', include('apps.quiz.urls', namespace='quiz')),
-    url(r'^progressbar/', include('apps.progressbar.urls', namespace='progressbar')),
     url(r'^upload/', include('apps.upload.urls', namespace='upload')),
     url(r'^users/',include('apps.users.urls', namespace='users')),
     url(r'^courses/', include('apps.courses.urls')),
