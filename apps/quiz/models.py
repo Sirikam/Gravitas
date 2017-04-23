@@ -177,10 +177,7 @@ class Sitting(models.Model):
                 returns the current score as an integer
                 """
         progress = int(self.current_progress)
-        if progress < 0:
-            return 0
-        else:
-            return progress
+        return progress
 
     def add_to_progress(self, points):
         """

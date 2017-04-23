@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, 'quiz/quiz_categories.html', {
         'categories': Category.objects.all(),
-        'Course':Course.objects.all(),
+        'Course': Course.objects.all(),
         'Quiz': Quiz.objects.all(),
         'documents': Document.objects.all(),
     })
@@ -27,7 +27,7 @@ def view_category(request, category_id):
     return render(request, 'quiz/quiz_category.html', {
         'category': category,
         'quizzes': quizzes,
-        'Course':Course.objects.all(),
+        'Course': Course.objects.all(),
         'Quiz': Quiz.objects.all(),
         'documents': Document.objects.all(),
     })
@@ -43,7 +43,6 @@ def quiz_take(request, quiz_id):
 
     quiz = Quiz.objects.get(id=quiz_id)
 
-
     try:
         previous_sitting = Sitting.objects.get(
             user=request.user,
@@ -53,6 +52,7 @@ def quiz_take(request, quiz_id):
     except Sitting.DoesNotExist:
         #  start new quiz
         sitting = Sitting.objects.new_sitting(request.user, quiz)
+
         return load_next_question(request, sitting, quiz)
 
     except Sitting.MultipleObjectsReturned:
@@ -69,15 +69,18 @@ def quiz_take(request, quiz_id):
 
 
 @login_required
+
 def load_next_question(request, sitting, quiz):
     """
     Load the next question, including outcome of
     previous question, using the sitting
     """
+
     progress = sitting.get_current_progress()
     max_score = quiz.question_set.all().count()
     previous = {}
-
+    if len(previous) == 0 and progress == 0:
+        sitting.add_to_progress(1)
     if 'guess' in request.GET and request.GET['guess']:
         #  if there has been a previous question
         #  returns a dictionary with previous question details
@@ -85,13 +88,12 @@ def load_next_question(request, sitting, quiz):
         sitting.remove_first_question()  # remove the first question
     question_ID = sitting.get_next_question()
 
+
     if not question_ID:
         #  no questions left
         return final_result(request, sitting, previous)
 
     next_question = Question.objects.get(id=question_ID)
-
-
 
     return render_to_response('quiz/question.html',
                               {'quiz': quiz,
@@ -128,8 +130,6 @@ def question_check(request, quiz, sitting):
         outcome = "incorrect"
         sitting.add_incorrect_question(question)
         sitting.add_to_progress(1)
-
-
     if not quiz.answers_at_end:  # display answer after each question
         return {'previous_answer': answer,
                 'previous_outcome': outcome, 'previous_question': question, }
