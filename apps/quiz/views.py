@@ -43,6 +43,7 @@ def quiz_take(request, quiz_id):
 
     quiz = Quiz.objects.get(id=quiz_id)
 
+
     try:
         previous_sitting = Sitting.objects.get(
             user=request.user,
@@ -59,23 +60,22 @@ def quiz_take(request, quiz_id):
         previous_sitting = Sitting.objects.filter(
             user=request.user,
             quiz=quiz,
-            complete=False)[0]  # use the first one
-
+            complete=False)[0]  # use the first
         return load_next_question(request, previous_sitting, quiz)
 
     else:
         #  use existing quiz
         return load_next_question(request, previous_sitting, quiz)
 
-questions_answered = 0
+
 @login_required
 def load_next_question(request, sitting, quiz):
     """
     Load the next question, including outcome of
     previous question, using the sitting
     """
+    progress = sitting.get_current_progress()
     max_score = quiz.question_set.all().count()
-    questions_answered = 0
     previous = {}
 
     if 'guess' in request.GET and request.GET['guess']:
@@ -83,12 +83,10 @@ def load_next_question(request, sitting, quiz):
         #  returns a dictionary with previous question details
         previous = question_check(request, quiz, sitting)
         sitting.remove_first_question()  # remove the first question
-        questions_answered += 1
     question_ID = sitting.get_next_question()
 
     if not question_ID:
         #  no questions left
-        questions_answered += 1
         return final_result(request, sitting, previous)
 
     next_question = Question.objects.get(id=question_ID)
@@ -99,11 +97,11 @@ def load_next_question(request, sitting, quiz):
                               {'quiz': quiz,
                                'question': next_question,
                                'previous': previous,
-                               'questions_answered': questions_answered,
                                'max_score': max_score,
                                'Quiz': Quiz.objects.all(),
                                'Course': Course.objects.all(),
-                               'documents': Document.objects.all()
+                               'documents': Document.objects.all(),
+                               'progress': progress
                                },
                               #context_instance=RequestContext(request)
                               )
@@ -124,9 +122,13 @@ def question_check(request, quiz, sitting):
     if answer.correct:
         outcome = "correct"
         sitting.add_to_score(1)  # add 1 to sitting score.
+        sitting.add_to_progress(1)
+
     else:
         outcome = "incorrect"
         sitting.add_incorrect_question(question)
+        sitting.add_to_progress(1)
+
 
     if not quiz.answers_at_end:  # display answer after each question
         return {'previous_answer': answer,
@@ -142,10 +144,10 @@ def final_result(request, sitting, previous):
     """
     quiz = sitting.quiz
     score = sitting.get_current_score()
+    progress = sitting.get_current_progress()
     incorrect = sitting.get_incorrect_questions()
     max_score = quiz.question_set.all().count()
     percent = sitting.get_percent_correct()
-
     sitting.mark_quiz_complete()  # mark as complete
 
     if not quiz.exam_paper:  # if we do not plan to store the outcome
@@ -156,6 +158,7 @@ def final_result(request, sitting, previous):
             'quiz': quiz,
             'score': score,
             'max_score': max_score,
+            'progress': progress,
             'percent': percent,
             'previous': previous,
             'Quiz': Quiz.objects.all(),
@@ -175,10 +178,12 @@ def final_result(request, sitting, previous):
             'incorrect_questions': incorrect,
             'Quiz': Quiz.objects.all(),
             'Course': Course.objects.all(),
-            'documents': Document.objects.all()
+            'documents': Document.objects.all(),
+            'progress': progress
         },
           # context_instance=RequestContext(request)
          )
+
 
 # for posting a comment
 @login_required()

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_nose'
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,10 @@ MEDIA_URL = '/media/'
 
 #login info
 LOGIN_REDIRECT_URL = '/staticpages/homepage/'
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=foo,bar',
+]

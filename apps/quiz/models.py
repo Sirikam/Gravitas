@@ -136,6 +136,7 @@ class SittingManager(models.Manager):
             question_list=questions,
             incorrect_questions="",
             current_score="0",
+            current_progress="0",
             complete=False)
         new_sitting.save()
         return new_sitting
@@ -167,8 +168,29 @@ class Sitting(models.Model):
     # a string of the score ie 19  convert to int for use
     # TODO: Why is this a string? Change to int
     current_score = models.TextField()
+    current_progress = models.TextField()
     complete = models.BooleanField(default=False, blank=False)
     objects = SittingManager()
+
+    def get_current_progress(self):
+        """
+                returns the current score as an integer
+                """
+        progress = int(self.current_progress)
+        if progress < 0:
+            return 0
+        else:
+            return progress
+
+    def add_to_progress(self, points):
+        """
+        Adds the points to the running total.
+        Does not return anything
+        """
+        present_progress = self.get_current_progress()
+        updated_progress = present_progress + int(points)
+        self.current_progress = str(updated_progress)
+        self.save()
 
     def get_next_question(self):
         """
@@ -182,7 +204,6 @@ class Sitting(models.Model):
         # if no question number is found
         if first_comma == -1 or first_comma == 0:
             return False
-
         # up to but not including the first comma
         qID = self.question_list[:first_comma]
 
