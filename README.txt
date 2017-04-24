@@ -33,7 +33,7 @@ TODO
 How to run the app/bot
 ===============
 To run the server and use the app/bot you must follow these steps.
-Open terminal and write: python manage.py runserver
+Open terminal and go to the project directory, then write: python manage.py runserver
 open a web-browser and write in the URL field: 127.0.0.1:8000
 
 
