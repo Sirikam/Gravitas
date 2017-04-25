@@ -1,2 +1,0 @@
-include setup.py README.md MANIFEST.in LICENCE.txt AUTHORS.txt
-recursive-include quiz/templates *

@@ -22,13 +22,45 @@ TODO
 http://getbootstrap.com/
 TODO
 
+Software to be installed in the project
+=======================================
+TODO, install guide for pip
+
+If you use pycharm, open file>settings>project interpreter, and create a
+virtualenv.
+
+below is a list of plugins to install
+=====================================
+Plugin                  Version
+-------------------------------------
+Django              	1.11
+appdirs             	1.4.3
+coverage            	4.4b1
+django-model-utils  	2.6.1
+django-registration 	2.2
+django-widget-list  	0.10.0
+django-widget-tweaks   	1.4.1
+olefile             	0.44
+packaging           	16.8
+pillow              	4.0.0
+pip                 	9.0.1
+pluggy              	0.4.0
+psycopg2            	2.7.1
+py	1.4.33          	1.4.33
+pyparsing              	2.2.0
+pytz                	2016.10
+requests            	2.13.0
+setuptools          	34.3.3
+six                 	1.10.0
+tox                 	2.6.0
+virtualenv          	15.1.0
 
 Tests
 ===============
-To run tests you must rightclick on one of the tests.py files 
-and press "run". if the test is valid,.... TODO, if the test is NOT valid, 
-you will get an error massage that explains what goes wrong.
-TODO
+For use of the Coverage tool, make sure that the coverage is installed in the project,
+then rightclick the folder and select run with coverage. Create a django test, and select your
+project interpreter as teh test interpreter. Run the test.
+
 
 How to run the app/bot
 ===============
@@ -51,7 +83,8 @@ Tom Walker ([tomwalker](https://github.com/tomwalker)).
 TODO 
 
 
-Contributors 
+
+Contributors
 ===============
 Bendik Harto Seim
 Siri H. Ulltveit-Moe
