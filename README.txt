@@ -55,6 +55,22 @@ six                 	1.10.0
 tox                 	2.6.0
 virtualenv          	15.1.0
 
+To install pip in console:
+
+download the get-pip.py script(https://raw.github.com/pypa/pip/master/contrib/get-pip.py), save it locally,
+then run it using Python as shown below:
+
+"PS C:\> python get-pip.py
+Downloading/unpacking pip
+Downloading/unpacking setuptools
+Installing collected packages: pip, setuptools
+Successfully installed pip setuptools
+Cleaning up...
+PS C:\>"
+
+To install plugins with pip in console write: pip install <plugin_name>
+Example C:\Users\Admin\Gravitas> pip install virtualenv
+
 Tests
 ===============
 For use of the Coverage tool, make sure that the coverage is installed in the project,
