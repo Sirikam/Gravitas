@@ -1,10 +1,8 @@
 
 html{
   height: 100%;
-
   background-image: url('../img/cover6.jpg');
   background-size: cover;
-
 }
 /*
  * Globals
@@ -32,15 +30,11 @@ a:hover {
  * Base structure
  */
 
-html,
-body {
-  height: 100%;
-  background-color: #333;
-}
 body {
   background: transparent;
   text-align: center;
   text-shadow: none;
+  height: 100%;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -86,11 +80,7 @@ a:hover {
  * Base structure
  */
 
-html,
-body {
-  height: 100%;
-  background-color: #333;
-}
+
 body {
   color: #fff;
   text-align: center;
@@ -280,8 +270,6 @@ body {
 }
 
 .maincontainercover{
-  background:rgba(100,100,100,0.1);
-
   border-radius: 25px;
   text-align: center;
 }
