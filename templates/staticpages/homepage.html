@@ -1,15 +1,22 @@
 {% extends 'staticpages/navbar.html' %}
 {% load staticfiles %}
 {% block content %}
+        <!-- Bootstrap core CSS -->
+     <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
     <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!--<div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
+    <!--
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
+        <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+        <!--<li data-target="#myCarousel" data-slide-to="1"></li>-->
+        <!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
+      <!--</ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
           <img class="first-slide" src="{% static 'img/acover.jpg' %}" alt="First slide">
@@ -26,7 +33,7 @@
             <div class="carousel-caption">
               <h1>quizzes</h1>
               <p> Have you tried one of our new quizzes? Test yourself to see if you are up to date on your education.</p>
-              <p><a class="btn btn-lg btn-primary" href="{% url 'quiz:index' %}" role="button">Go to quiz</a></p>
+              <p><a class="btn btn-lg btn-primary" href="{% url 'quiz:quiz_categories' %}" role="button">Go to quiz</a></p>
             </div>
           </div>
         </div>
@@ -40,6 +47,8 @@
             </div>
           </div>
         </div>
+        -->
+    <!--
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -52,61 +61,68 @@
     </div><!-- /.carousel -->
 
 
+
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="quote">
-        <hr class="featurette-divider">
-        <p id="quote"></p>
-    <hr class="featurette-divider">
-    </div>
-<br>
-<br>
-    <div class="container marketing">
 
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-
-          <img class="img-circle" src="{% static 'img/Logo_quiz.png'%}" alt="Quiz" width="140" height="140">
-
-          <h2>Quiz</h2>
-          <p>Gravitas have several quizzes on lecture material from different subjects.</p>
-          <p><a class="btn btn-default" href="{% url 'quiz:index' %}" role="button">Go to quizzes &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-
-          <img class="img-circle" src="{% static 'img/Logo_doc.png'%}" alt="Generic placeholder image" width="140" height="140">
-          <h2>Documents</h2>
-          <p>You can view documents uploaded by the lecturers here.</p>
-          <p><a class="btn btn-default" href="#" role="button">View documents &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-
-          <img class="img-circle" src="{% static 'img/Logo_plan.png'%}" alt="Generic placeholder image" style="background-color: white" width="140" height="140">
-
-          <h2>Schedule</h2>
-          <p>Here you can view your schedule. Powered by 1024.no</p>
-          <p><a class="btn btn-default" href="{% url 'staticpages:schedule' %}" role="button">View schedule &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <div class="container-marketing">
+        <div class="img-rounded">
+            <img src="{% static 'img/GRAVITASLOGO.png' %}" width=50%  height=50%>
         </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        <div class="welcome">
+           <!-- <hr class="featurette-divider"> -->
+            <br>
+            {% if user.is_authenticated %}
+            <p id="welcome">Welcome to Gravitas, {{ user.username }}!</p>
+            {% endif %}
+            <hr class="featurette-divider">
         </div>
+        <div class="quote">
+           <!-- <hr class="featurette-divider"> -->
+            <p id="quote"></p>
+            <hr class="featurette-divider">
+        </div>
+            <br>
+            <br>
+          <!-- Three columns of text below the carousel -->
+          <div class="row">
+            <div class="col-lg-4">
+              <img class="img-rounded" src="{% static 'img/Logo_quiz.png' %}" alt="Quiz" width="140" height="140">
+              <h2>Quiz</h2>
+              <p>Gravitas have several quizzes on lecture material from different subjects.</p>
+              <p><a class="btn btn-default" href="{% url 'quiz:quiz_categories' %}" role="button">Go to quizzes &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img class="img-rounded" src="{% static 'img/Logo_doc.png' %}" alt="doc" width="120" height="140">
+              <h2>Documents</h2>
+              <p>You can view documents uploaded by the lecturers here.</p>
+              <p><a class="btn btn-default" href="{% url 'documents:index' %}" role="button">View documents &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img class="img-rounded" src="{% static 'img/Logo_plan.png' %}" alt="plan" width="140" height="140">
+              <h2>Schedule</h2>
+              <p>Here you can view your schedule. Powered by 1024.no</p>
+              <p><a class="btn btn-default" href="{% url 'staticpages:schedule' %}" role="button">View schedule &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+          </div><!-- /.row -->
+
+
+          <!-- START THE FEATURETTES -->
+
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">What is <span class="text-muted">Gravitas?</span></h2>
+              <p class="lead">Gravitas will help you gather the most essential tools needed to master a busy day at the University and motivate you to keep track on your subjects.</p>
+            </div>
+            <div class="col-md-5">
+              <img class="featurette-image img-responsive center-block" src="{% static 'img/featurette.jpg' %}" alt="StudyPicture" width="80%" hight="80%">
+            </div>
       </div>
-
+<!--
       <hr class="featurette-divider">
 
       <div class="row featurette">
@@ -120,8 +136,9 @@
       </div>
 
       <hr class="featurette-divider">
-
+-->
     </div>
       <!-- /END THE FEATURETTES -->
     <script src="{% static "js/random-quote.js" %}"></script>
+    </div>
 {% endblock %}

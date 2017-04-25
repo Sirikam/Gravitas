@@ -1,38 +1,56 @@
 
-ul {
+.quizlist li {
   list-style-type: none;
+  color: dimgray;
+  font-size: 20px;
 }
 
-.rating {
-    float:none;
-    width:300px;
-}
-.rating span { float:left; position:center; }
-.rating span input {
-    position:absolute;
-    top:0px;
-    left:0px;
-    opacity:0;
-}
-.rating span label {
-    display:inline-block;
-    width:30px;
-    height:30px;
-    text-align:center;
-    color:white;
-    background:#ccc;
-    font-size:40px;
-    margin-right:2px;
-    line-height:30px;
-    border-radius:50%;
-    -webkit-border-radius:50%;
+.quizlist ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-input.star-1:checked ~ label.star:before { color: #F62; }
+.quizlist li {
+  border-bottom: 1px solid #ccc;
+}
 
-label.star:hover { transform: rotate(-15deg) scale(1.3); }
+.quizlist li:last-child {
+  border: none;
+}
 
-label.star:before {
-  content: '\f006';
-  font-family: FontAwesome;
+.quizlist li a {
+  text-decoration: none;
+  color: dimgrey;
+  display: inline-block;
+  width: 200px;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.quizlist li a:hover {
+  font-size: 25px;
+  background: #f6f6f6;
+}
+#answerchoice {
+    color: dimgrey;
+    text-shadow: none;
+    font-weight: normal;
+}
+tbody {
+    color: dimgrey;
+    text-shadow: none;
+    font-weight: normal;
+}
+#answertable{
+    color: dimgrey;
+    text-shadow: none;
+    font-weight: normal;
+}
+#buttontext{
+    color: white;
 }

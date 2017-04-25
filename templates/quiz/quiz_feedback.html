@@ -1,0 +1,11 @@
+{% extends 'staticpages/navbar.html' %}
+{% block content %}
+    <p>Hello {{ user }}! Do you want to give a comment?</p><br>
+    <form action="{% url 'quiz:quiz_feedback' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <p><input type="submit" value="Upload"/></p>
+    </form>
+{% endblock %}

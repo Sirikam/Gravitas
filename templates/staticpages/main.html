@@ -8,6 +8,7 @@
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
       <meta name="description" content="">
       <meta name="author" content="">
+      <link rel="icon" href="{% static 'img/litenlogo.png' %}">
 
       <title>Gravitas</title>
 
@@ -39,12 +40,14 @@
                 <ul class="nav masthead-nav">
                   {% if user.is_authenticated %}
 
-                    <li class="navbar-text">Welcome, {{ user.username }}!</li>
-                    <li><a hfref="{% url 'staticpages:hompeage' %}">Home</a></li>
-
-                    <li><a href="...">Logout</a></li>
+                    <li class="navbar-text">Welcome, {{ user.username }}!  </li>
+                    <li><a href="{% url 'staticpages:homepage' %}">Home</a></li>
+                    <li><form method="get">
+                        {% csrf_token %}
+                        <a href="{% url 'staticpages:logout' %}">Logout</a>
+                    </form></li>
                    {% else %}
-                    <li><a href="{% url 'admin' %}">Register</a></li>
+                    <li><a href="{% url 'admin:index' %}">Register</a></li>
                     <li><a href="{% url 'staticpages:login' %}">Log in</a></li>
                    {% endif %}
                 </ul>

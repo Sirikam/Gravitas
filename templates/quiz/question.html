@@ -1,0 +1,79 @@
+{% extends 'staticpages/navbar.html' %}
+{% load staticfiles %}
+{% block content %}
+    <link href="{% static 'css/quiz.css' %}" rel="stylesheet">
+
+{% load quiz_tags %}
+{% load i18n %}
+
+{% block page_title %}
+    <h2>{{ quiz.title }}</h2>
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block article %}
+
+    <h4>{{ quiz.description }}</h4>
+
+<br />
+
+{% if question %}
+    <div class="questions">
+        <p>
+            <small class="muted">Question category:</small>
+            <strong>{{ question.category }}</strong>
+        </p>
+
+        <p class="lead">{{ question.content }}</p>
+        {% answers_for_question question quiz %}
+    </div>
+{% endif %}
+</br>
+    {# progress bar for quiz #}
+<p>Progress:</p>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="{{ max_score }}" style="width:{% widthratio progress max_score 100 %}%">
+      {% widthratio progress max_score 100 %}%
+  </div>
+</div>
+<hr />
+
+{% if previous %}
+
+    {# Show the result of the previous question #}
+    {# if it must be shown after each answer    #}
+
+    <p class="muted"><small>The previous question:</small></p>
+    <p>{{ previous.previous_question }}</p>
+
+    {% ifequal previous.previous_outcome 'correct' %}
+    <div class="alert alert-success">
+    {% else %}
+    <div class="alert alert-danger">
+    {% endifequal %}
+
+        <p>
+            <small>Your answer was </small>
+            <em>{{ previous.previous_answer }}</em>
+            <small> which is </small>
+            <strong>{{ previous.previous_outcome }}</strong>
+        </p>
+    </div>
+
+    {% correct_answer previous %}
+
+    <p><strong>Explanation:</strong></p>
+    <div class="well " style="background-color: #fcf8e3;">
+        <p>{{ previous.previous_question.explanation }}</p>
+    </div>
+
+
+{% endif %}
+
+<hr />
+
+{% endblock %}
+{% endblock %}

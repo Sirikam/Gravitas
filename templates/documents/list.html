@@ -9,10 +9,11 @@
 
     <body>
         <!-- List of uploaded documents -->
+        <h3>All documents</h3>
         {% if documents %}
             <ul>
                 {% for document in documents %}
-                    <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+                    <li><a href="{{ document.docfile.url }}">Document name: {{ document.name }}, Course: {{ document.course }}, User: {{ document.user }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}
@@ -20,16 +21,11 @@
         {% endif %}
 
         <!-- Upload form. Note enctype attribute! -->
+        <h3>Upload document</h3>
         <form action="{% url 'documents:list' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <p>{{ form.non_field_errors }}</p>
 
-            <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
-
-            <p>
-                {{ form.docfile.errors }}
-                {{ form.docfile }}
-            </p>
+            {{ form.as_p}}
 
             <p><input type="submit" value="Upload"/></p>
         </form>

@@ -1,0 +1,22 @@
+{% extends 'staticpages/navbar.html' %}
+{%  load staticfiles %}
+{% block content %}
+    <div>
+        <h1>{{ current_course }} - {{ current_course.course_name }}</h1>
+        <p>Welcome to the document overview for {{ current_course }}. Here is a list of all the available objects.</p>
+    <hr>
+    </div>
+    <div>
+    <h3>Documents</h3>
+    {% if Documents %}
+            <ul>
+                {% for document in Documents %}
+                    {% ifequal current_course document.course %}
+                    <li><a href="{{ document.docfile.url }}">Document name: {{ document.name }}, Course: {{ document.course }}, User: {{ document.user }}</a></li>
+                    {% endifequal %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No documents.</p>
+        {% endif %}
+{% endblock %}

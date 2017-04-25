@@ -4,9 +4,7 @@
 
 body {
   padding-bottom: 40px;
-
-  background-color: antiquewhite;
-
+  background-color: white;
 }
 
 
@@ -33,14 +31,65 @@ body {
 }
 .navbar-wrapper .navbar .container {
   width: auto;
+
 }
 
+/* NAVBAR*/
+/*-----------------------------------------------*/
+.navbar-custom {
+    background-color:white;
+    color:#ffffff;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+    text-shadow: none;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color:transparent;
+    text-shadow: none;
+}
+
+.navbar-custom .navbar-nav > li > a:hover{
+  color: #33bce6;
+  background-color: white;
+  text-shadow: none;
+}
+.navbar-custom .navbar-nav > li > a{
+  color: black;
+  text-shadow: none;
+}
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: white;
+}
+
+.navbar-custom .navbar-brand {
+    color:#ffffff;
+}
+.navbar-custom .navbar-toggle {
+    background-color:#ffffff;
+}
+.navbar-custom .icon-bar {
+    background-color:white;
+}
+.navbar-custom .navbar-text {
+  color: #ffffff;
+}
+/*-----------------------------------------------*/
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
 /* Carousel base class */
 .carousel {
+  width: 100%;
   height: 500px;
   margin-bottom: 60px;
 }
@@ -52,7 +101,7 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
-  background-color: #777;
+  background-color: #ffffff;
 
 }
 .carousel-inner > .item > img {
@@ -74,10 +123,15 @@ body {
 }
 .marketing h2 {
   font-weight: normal;
+  color: dimgray;
+  box-shadow: none;
 }
+
 .marketing .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
+  color: slategray;
+  text-shadow: none;
 }
 
 
@@ -86,6 +140,7 @@ body {
 
 .featurette-divider {
   margin: 20px 0; /* Space out the Bootstrap <hr> more */
+  color: #000;
 }
 
 /* Thin out the marketing headings */
@@ -104,18 +159,19 @@ body {
   .navbar-wrapper {
     margin-top: 20px;
   }
-  .navbar-wrapper .container {
+  .navbar-wrapper .container{
     padding-right: 15px;
     padding-left: 15px;
+    display: inline-flex;
   }
+
   .navbar-wrapper .navbar {
     padding-right: 0;
     padding-left: 0;
-  }
 
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
+  }
+  .navbar-wrapper .navbar-header{
+    display: inline-block;
   }
 
   /* Bump up size of carousel content */
@@ -154,14 +210,23 @@ a:hover {
 }
 
 /* Custom default button */
+.btn-default:default{
+  color: white;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+  color: black;
+}
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
+  background-color: dodgerblue;
   border: 1px solid #fff;
 }
+
+
 
 
 /*
@@ -174,6 +239,8 @@ body {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  background-color: dodgerblue;
+
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -287,6 +354,7 @@ body {
   .mastfoot {
     position: fixed;
     bottom: 0;
+    padding-top: 20px;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
@@ -310,10 +378,68 @@ body {
 }
 
 .maincontainer{
-  background:rgba(100,100,100,0.1);
+  background:white;
   border-radius: 25px;
   text-align: center;
   margin-top: 120px;
   margin-left: 50px;
   margin-right: 50px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.img-rounded{
+
+}
+.maincontainer a, p, h1, h2, h3, h4, h5, h6{
+  text-align: center;
+  color: dimgray;
+  text-shadow: none;
+}
+.maincontainer ul, li, a{
+  padding: 0;
+  list-style-type: none;
+}
+.quote{
+  font-size: 25px;
+  color: dimgray;
+  text-shadow: none;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.featurette-image{
+  border-radius: 25px;
+}
+.col-md-5{
+  padding-top: 5%;
+}
+#welcome{
+  color: dodgerblue;
+}
+footer{
+  padding-top: 2%;
+}
+.foot{
+  color: white;
+}
+li{
+  color: dimgray;
+  text-shadow: none;
+}
+.col-lg-4 a{
+  color: white;
+}
+.buttontext{
+  color: white;
+}
+#logout{
+  float: right;
+  font-size: 10px;
+  color: white;
+  text-shadow: none;
+  background-color: black;
+  border-radius: 10px;
+  border: hidden;
 }

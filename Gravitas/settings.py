@@ -138,3 +138,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 # media files, this will need to be changed in the full version
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#login info
+LOGIN_REDIRECT_URL = '/staticpages/homepage/'
+

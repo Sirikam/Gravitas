@@ -2,7 +2,7 @@
 html{
   height: 100%;
 
-  background-image: url('../img/cover4.png');
+  background-image: url('../img/cover6.jpg');
   background-size: cover;
 
 }
@@ -184,6 +184,7 @@ body {
 
 .masthead-nav > li {
   display: inline-block;
+  text-shadow: none;
 }
 .masthead-nav > li + li {
   margin-left: 20px;
@@ -283,9 +284,10 @@ body {
 
   border-radius: 25px;
   text-align: center;
-
 }
-
+form > p{
+  color: white;
+}
 
 h1, h2{
   color: white;

@@ -1,21 +1,15 @@
-<!DOCTYPE html>
+{% extends '../staticpages/navbar.html' %}
+{% block content %}
 {% load staticfiles %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Documents</title>
-</head>
-
-<body>
 <!-- Dette er siden der du kan velge hvilket fag du vil lese dokumentene fra.-->
 <h1>Documents</h1>
-
+<img src="{% static 'img/Logo_doc.png' %}" alt="contact us" width="80px" hight="100px">
+</br>
+<p>Here's a list of all your subjects. Click one of the to view the available documents for that subject.</p>
+</br>
+    <hr>
 <!-- linker til de forskjellige emnesidene med dokumentene -->
 {% for course in Course %}
-    <a href="#">{{ course.course_code }}</a>
+    <a href="/documents/{{ course.id }}/">{{ course.course_code }} </a>
 {% endfor %}
-
-
-</body>
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-</html>
+{%  endblock %}

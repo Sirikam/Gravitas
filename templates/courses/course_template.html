@@ -1,23 +1,53 @@
-<!DOCTYPE html>
-{% extends "staticpages/navbar.html" %}
+{% extends 'staticpages/navbar.html' %}
+{%  load staticfiles %}
 {% block content %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ course_code }}</title>
+    <title>{{ current_course }}</title>
 </head>
 <body>
 
 <div>
-    <h1>{{ current_course }}</h1>
+    <h1>{{ current_course }} - {{ current_course.course_name }}</h1>
     <p>Velkommen til siden til {{ current_course }}. Her kan du se en liste over alle medlemmer, samt tilhørende dokumenter og quizzer</p>
 
 </div>
+<br>
+<h4> Heres a link to the Courses Quizzes:</h4>
 <div>
-    <h2> her er en liste over deltagere</h2>
-    {% for item in participants %}
-        <p> {{ item.first_name }}{{ item.last_name }}</p>
-    {% endfor %}
+
+    {% if categories %}
+        <ul>
+        {% for category in categories %}
+            {% ifequal current_course|stringformat:"s" category.name  %}
+            <li>
+                <a href="{% url "quiz:quiz_category" category.id %}">
+                    {{ category.name }}
+                </a>
+            </li>
+            {% endifequal %}
+        {% endfor %}
+        </ul>
+    {% else %}
+            <p>No quizzes.</p>
+    {% endif %}
+
+</div>
+<br>
+<h4> Here is a list of this subject's documents:</h4>
+<div>
+    {% if Documents %}
+            <ul>
+                {% for document in Documents %}
+                    {% ifequal current_course document.course %}
+                        <li><a href="{{ document.docfile.url }}">Document name: {{ document.name }}, Course: {{ document.course }}, User: {{ document.user }}</a></li>
+                    {% endifequal %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No documents.</p>
+        {% endif %}
 </div>
 
 

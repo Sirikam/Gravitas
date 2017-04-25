@@ -1,0 +1,15 @@
+{% extends 'staticpages/navbar.html' %}
+{% load staticfiles %}
+{% block content %}
+<h1>Contact us</h1>
+
+<img src="{% static 'img/contact.png' %}" alt="contact us" width="200px" hight="100px">
+</br>
+<p>If you have any questions or complaints about the app, please contact us using one of the methods below.</p>
+</br>
+
+<ul>
+    <li style="margin: 0 0 10px 0;"><a href="mailto:contactus@gravitas.com">Email: contactus@gravitas.com</a></li>
+    <li>Phone: +4790807060</li>
+</ul>
+{%  endblock %}
