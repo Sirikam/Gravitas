@@ -7,6 +7,7 @@
 </br>
 <p>Here's a list of all your subjects. Click one of the to view the available documents for that subject.</p>
 </br>
+    <hr>
 <!-- linker til de forskjellige emnesidene med dokumentene -->
 {% for course in Course %}
     <a href="/documents/{{ course.id }}/">{{ course.course_code }} </a>

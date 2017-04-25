@@ -9,6 +9,7 @@
 
     <body>
         <!-- List of uploaded documents -->
+        <h3>All documents</h3>
         {% if documents %}
             <ul>
                 {% for document in documents %}
@@ -20,6 +21,7 @@
         {% endif %}
 
         <!-- Upload form. Note enctype attribute! -->
+        <h3>Upload document</h3>
         <form action="{% url 'documents:list' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
