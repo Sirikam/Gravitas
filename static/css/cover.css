@@ -276,6 +276,9 @@ body {
 form > p{
   color: white;
 }
+form > p > input{
+  color: black;
+}
 
 h1, h2{
   color: white;
