@@ -18,13 +18,11 @@ at NTNU you can choose "professional")
 -follow the steps in the installing-window
 
 https://www.djangoproject.com/
-TODO
 http://getbootstrap.com/
-TODO
 
 Software to be installed in the project
 =======================================
-TODO, install guide for pip
+There is a virtual server added to the project called Gravenv, if that fails, follow instruction below
 
 If you use pycharm, open file>settings>project interpreter, and create a
 virtualenv.
@@ -46,7 +44,7 @@ pillow              	4.0.0
 pip                 	9.0.1
 pluggy              	0.4.0
 psycopg2            	2.7.1
-py	1.4.33          	1.4.33
+py	                  	1.4.33
 pyparsing              	2.2.0
 pytz                	2016.10
 requests            	2.13.0
@@ -96,8 +94,6 @@ Acknowledgments
 -->Inspiration<--
 Quiz - This is a configurable quiz app for Django, developed by
 Tom Walker ([tomwalker](https://github.com/tomwalker)).
-TODO 
-
 
 
 Contributors
